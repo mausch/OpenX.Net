@@ -7,18 +7,22 @@ namespace OpenXNet {
     public class Class1 {
         [Test]
         public void Login_OK() {
-            var svc = XmlRpcProxyGen.Create<IOpenXService>();
-            svc.Url = "http://10.0.0.62/openx/api/v2/xmlrpc/";
+            IOpenXService svc = GetSvc();
             var sessionId = svc.Logon("root", "root");
             Console.WriteLine(sessionId);
-        } 
-        
+        }
+
         [Test]
-        [ExpectedException(typeof(XmlRpcFaultException))]
+        [ExpectedException(typeof (XmlRpcFaultException))]
         public void Login_error() {
+            var svc = GetSvc();
+            svc.Logon("root", "rootasd");
+        }
+
+        private IOpenXService GetSvc() {
             var svc = XmlRpcProxyGen.Create<IOpenXService>();
             svc.Url = "http://10.0.0.62/openx/api/v2/xmlrpc/";
-            svc.Logon("root", "rootasd");
+            return svc;
         }
     }
 }
