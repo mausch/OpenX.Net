@@ -4,7 +4,7 @@ using MbUnit.Framework;
 
 namespace OpenXNet {
     [TestFixture]
-    public class Class1 {
+    public class OpenXServiceTests {
         [Test]
         public void Login_OK() {
             IOpenXService svc = GetSvc();
@@ -24,9 +24,6 @@ namespace OpenXNet {
         public void AddBanner_no_login() {
             var svc = GetSvc();
             svc.AddBanner(null, new Banner());
-        }
-
-        public class Banner {
         }
 
         private IOpenXService GetSvc() {

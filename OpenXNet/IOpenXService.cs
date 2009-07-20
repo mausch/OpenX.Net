@@ -9,6 +9,6 @@ namespace OpenXNet {
         void Logoff(string sessionId);
 
         [XmlRpcMethod("ox.addBanner")]
-        void AddBanner(string sessionId, Class1.Banner banner);
+        void AddBanner(string sessionId, Banner banner);
     }
 }
