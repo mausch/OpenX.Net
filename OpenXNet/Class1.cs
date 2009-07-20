@@ -10,6 +10,7 @@ namespace OpenXNet {
             IOpenXService svc = GetSvc();
             var sessionId = svc.Logon("root", "root");
             Console.WriteLine(sessionId);
+            svc.Logoff(sessionId);
         }
 
         [Test]
@@ -17,6 +18,15 @@ namespace OpenXNet {
         public void Login_error() {
             var svc = GetSvc();
             svc.Logon("root", "rootasd");
+        }
+
+        [Test]
+        public void AddBanner_no_login() {
+            var svc = GetSvc();
+            svc.AddBanner(null, new Banner());
+        }
+
+        public class Banner {
         }
 
         private IOpenXService GetSvc() {

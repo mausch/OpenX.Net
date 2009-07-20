@@ -1,4 +1,5 @@
 *.suo
+*.pdb
 _ReSharper.OpenXNet
 OpenXNet/bin
 OpenXNet/obj
