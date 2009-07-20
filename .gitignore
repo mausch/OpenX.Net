@@ -1,0 +1,4 @@
+*.suo
+_ReSharper.OpenXNet
+OpenXNet/bin
+OpenXNet/obj
