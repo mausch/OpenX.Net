@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using CookComputing.XmlRpc;
 
 namespace OpenXNet {
@@ -8,8 +9,14 @@ namespace OpenXNet {
 
         public SessionImpl(string username, string password, string url) {
             svc = XmlRpcProxyGen.Create<IOpenXService>();
+            svc.ResponseEvent += svc_ResponseEvent;
             svc.Url = url;
             sessionId = svc.Logon(username, password);
+        }
+
+        private void svc_ResponseEvent(object sender, XmlRpcResponseEventArgs args) {
+            using (var ts = new StreamReader(args.ResponseStream))
+                Console.WriteLine(ts.ReadToEnd());
         }
 
         public void Dispose() {
@@ -21,11 +28,13 @@ namespace OpenXNet {
         }
 
         public void AddCampaign(Campaign campaign) {
-            svc.AddCampaign(sessionId, campaign);
+            var id = svc.AddCampaign(sessionId, campaign);
+            campaign.Id = id;
         }
 
         public void AddAdvertiser(Advertiser advertiser) {
-            svc.AddAdvertiser(sessionId, advertiser);
+            var id = svc.AddAdvertiser(sessionId, advertiser);
+            advertiser.Id = id;
         }
     }
 }

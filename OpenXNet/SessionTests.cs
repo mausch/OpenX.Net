@@ -1,4 +1,5 @@
-﻿using MbUnit.Framework;
+﻿using System;
+using MbUnit.Framework;
 
 namespace OpenXNet {
     [TestFixture]
@@ -6,7 +7,9 @@ namespace OpenXNet {
         [Test]
         public void AddAdvertiser() {
             using (var session = NewSession()) {
-                session.AddAdvertiser(new Advertiser {AdvertiserName = "Fulano"});
+                var advertiser = new Advertiser {AdvertiserName = "Fulano-" + Guid.NewGuid()};
+                session.AddAdvertiser(advertiser);
+                Console.WriteLine(advertiser.Id);
             }
         }
 
