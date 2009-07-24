@@ -60,6 +60,7 @@
     <Compile Include="Advertiser.cs" />
     <Compile Include="Banner.cs" />
     <Compile Include="Campaign.cs" />
+    <Compile Include="IOpenXService_Advertiser.cs" />
     <Compile Include="IOpenXService_Campaign.cs" />
     <Compile Include="ISession.cs" />
     <Compile Include="OpenXServiceTests.cs" />
