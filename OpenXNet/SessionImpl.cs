@@ -10,13 +10,22 @@ namespace OpenXNet {
         public SessionImpl(string username, string password, string url) {
             svc = XmlRpcProxyGen.Create<IOpenXService>();
             svc.ResponseEvent += svc_ResponseEvent;
+            svc.RequestEvent += svc_RequestEvent;
             svc.Url = url;
             sessionId = svc.Logon(username, password);
         }
 
-        private void svc_ResponseEvent(object sender, XmlRpcResponseEventArgs args) {
-            using (var ts = new StreamReader(args.ResponseStream))
+        private void svc_RequestEvent(object sender, XmlRpcRequestEventArgs args) {
+            PrintStream(args.RequestStream);
+        }
+
+        private void PrintStream(Stream args) {
+            using (var ts = new StreamReader(args))
                 Console.WriteLine(ts.ReadToEnd());
+        }
+
+        private void svc_ResponseEvent(object sender, XmlRpcResponseEventArgs args) {
+            PrintStream(args.ResponseStream);
         }
 
         public void Dispose() {

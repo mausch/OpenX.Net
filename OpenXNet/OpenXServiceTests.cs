@@ -55,6 +55,15 @@ namespace OpenXNet {
             });
         }
 
+        [Test]
+        public void GetCampaignList() {
+            WithSession((sessionId, svc) => {
+                var list = svc.GetCampaignListByAdvertiser(sessionId, 1);
+                foreach (var a in list)
+                    Console.WriteLine(a.CampaignName);
+            });            
+        }
+
         public void WithSession(Action<string, IOpenXService> a) {
             var svc = GetSvc();
             var sessionId = svc.Logon("root", "root");

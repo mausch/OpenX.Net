@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using CookComputing.XmlRpc;
 
 namespace OpenXNet {
@@ -21,5 +22,8 @@ namespace OpenXNet {
 
         [XmlRpcMethod("ox.getCampaignDailyStatistics")]
         void GetCampaignDailyStatistics(string sessionId, int campaignId, DateTime startDate, DateTime endDate);
+
+        [XmlRpcMethod("ox.getCampaignListByAdvertiserId")]
+        Campaign[] GetCampaignListByAdvertiser(string sessionId, int advertisedId);
     }
 }
