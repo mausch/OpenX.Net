@@ -10,5 +10,8 @@ namespace OpenXNet {
 
         [XmlRpcMethod("ox.addBanner")]
         void AddBanner(string sessionId, Banner banner);
+
+        [XmlRpcMethod("ox.addCampaign")]
+        void AddCampaign(string sessionId, Campaign campaign);
     }
 }

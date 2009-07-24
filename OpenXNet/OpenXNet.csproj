@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banner.cs" />
+    <Compile Include="Campaign.cs" />
     <Compile Include="OpenXServiceTests.cs" />
     <Compile Include="IOpenXService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
