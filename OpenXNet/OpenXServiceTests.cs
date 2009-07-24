@@ -64,6 +64,21 @@ namespace OpenXNet {
             });            
         }
 
+        [Test]
+        public void GetCampaignPublisherStats() {
+            WithSession((sessionId, svc) => {
+                var list = svc.GetCampaignPublisherStatistics(sessionId, 1, DateTime.Now.AddYears(-1), DateTime.Now);
+                Console.WriteLine(list);
+            });                        
+        }
+
+        [Test]
+        public void ListMethods() {
+            var svc = GetSvc();
+            foreach (var m in svc.SystemListMethods())
+                Console.WriteLine(m);
+        }
+
         public void WithSession(Action<string, IOpenXService> a) {
             var svc = GetSvc();
             var sessionId = svc.Logon("root", "root");
