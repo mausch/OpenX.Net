@@ -44,14 +44,16 @@ namespace OpenXNet {
         [Test]
         public void GetCampaignStats() {
             WithSession((sessionId, svc) => {
-                svc.GetCampaignBannerStatistics(sessionId, 1, new DateTime(1980, 1, 1), DateTime.Now);
+                var list = svc.GetCampaignBannerStatistics(sessionId, 1, new DateTime(1980, 1, 1), DateTime.Now);
+                Console.WriteLine(list.Length);
             });
         }
 
         [Test]
         public void GetCampaignStatsDaily() {
             WithSession((sessionId, svc) => {
-                svc.GetCampaignDailyStatistics(sessionId, 1, new DateTime(1980, 1, 1), DateTime.Now);
+                var list = svc.GetCampaignDailyStatistics(sessionId, 1, new DateTime(1980, 1, 1), DateTime.Now);
+                Console.WriteLine(list.Length);
             });
         }
 
@@ -68,7 +70,7 @@ namespace OpenXNet {
         public void GetCampaignPublisherStats() {
             WithSession((sessionId, svc) => {
                 var list = svc.GetCampaignPublisherStatistics(sessionId, 1, DateTime.Now.AddYears(-1), DateTime.Now);
-                Console.WriteLine(list);
+                Console.WriteLine(list.Length);
             });                        
         }
 

@@ -17,16 +17,16 @@ namespace OpenXNet {
         [XmlRpcMethod("ox.modifyCampaign")]
         void ModifyCampaign(string sessionId, Campaign campaign);
 
-        [XmlRpcMethod("ox.getCampaignBannerStatistics")]
-        void GetCampaignBannerStatistics(string sessionId, int campaignId, DateTime startDate, DateTime endDate);
+        [XmlRpcMethod("ox.campaignBannerStatistics")]
+        object[] GetCampaignBannerStatistics(string sessionId, int campaignId, DateTime startDate, DateTime endDate);
 
-        [XmlRpcMethod("ox.getCampaignDailyStatistics")]
-        void GetCampaignDailyStatistics(string sessionId, int campaignId, DateTime startDate, DateTime endDate);
+        [XmlRpcMethod("ox.campaignDailyStatistics")]
+        object[] GetCampaignDailyStatistics(string sessionId, int campaignId, DateTime startDate, DateTime endDate);
 
-        [XmlRpcMethod("ox.getCampaignListByAdvertiserId")]
+        [XmlRpcMethod("ox.campaignListByAdvertiserId")]
         Campaign[] GetCampaignListByAdvertiser(string sessionId, int advertisedId);
 
-        [XmlRpcMethod("ox.getCampaignPublisherStatistics")]
+        [XmlRpcMethod("ox.campaignPublisherStatistics")]
         object[] GetCampaignPublisherStatistics(string sessionId, int campaignId, DateTime startDate, DateTime endDate);
     }
 }

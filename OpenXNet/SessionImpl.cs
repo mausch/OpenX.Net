@@ -7,6 +7,12 @@ namespace OpenXNet {
         private readonly IOpenXService svc;
         private readonly string sessionId;
 
+        public SessionImpl(string sessionId, string url) {
+            this.sessionId = sessionId;
+            svc = XmlRpcProxyGen.Create<IOpenXService>();
+            svc.Url = url;
+        }
+
         public SessionImpl(string username, string password, string url) {
             svc = XmlRpcProxyGen.Create<IOpenXService>();
             svc.ResponseEvent += svc_ResponseEvent;
