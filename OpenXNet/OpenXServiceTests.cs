@@ -21,7 +21,7 @@ namespace OpenXNet {
         }
 
         [Test]
-        [ExpectedException(typeof(XmlRpcFaultException))]
+        [ExpectedException(typeof (XmlRpcFaultException))]
         public void AddBanner_no_login() {
             var svc = GetSvc();
             svc.AddBanner("", new Banner());
@@ -29,21 +29,37 @@ namespace OpenXNet {
 
         [Test]
         public void Login_and_add_banner() {
-            var svc = GetSvc();
-            var sessionId = svc.Logon("root", "root");
-            try {
-                svc.AddBanner(sessionId, new Banner());                
-            } finally {
-                svc.Logoff(sessionId);
-            }
+            WithSession((sessionId, svc) => {
+                svc.AddBanner(sessionId, new Banner());
+            });
         }
 
         [Test]
         public void AddCampaign() {
+            WithSession((sessionId, svc) => {
+                svc.AddCampaign(sessionId, new Campaign());
+            });
+        }
+
+        [Test]
+        public void GetCampaignStats() {
+            WithSession((sessionId, svc) => {
+                svc.GetCampaignBannerStatistics(sessionId, 1, new DateTime(1980, 1, 1), DateTime.Now);
+            });
+        }
+
+        [Test]
+        public void GetCampaignStatsDaily() {
+            WithSession((sessionId, svc) => {
+                svc.GetCampaignDailyStatistics(sessionId, 1, new DateTime(1980, 1, 1), DateTime.Now);
+            });
+        }
+
+        public void WithSession(Action<string, IOpenXService> a) {
             var svc = GetSvc();
             var sessionId = svc.Logon("root", "root");
             try {
-                svc.AddBanner(sessionId, new Banner());
+                a(sessionId, svc);
             } finally {
                 svc.Logoff(sessionId);
             }            
