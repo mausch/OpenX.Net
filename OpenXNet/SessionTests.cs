@@ -6,7 +6,7 @@ namespace OpenXNet {
         [Test]
         public void AddAdvertiser() {
             using (var session = NewSession()) {
-                session.AddAdvertiser(new Advertiser {Name = "Pepito"});
+                session.AddAdvertiser(new Advertiser {AdvertiserName = "Fulano"});
             }
         }
 
