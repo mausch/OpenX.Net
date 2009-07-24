@@ -57,11 +57,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Advertiser.cs" />
     <Compile Include="Banner.cs" />
     <Compile Include="Campaign.cs" />
+    <Compile Include="ISession.cs" />
     <Compile Include="OpenXServiceTests.cs" />
     <Compile Include="IOpenXService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionImpl.cs" />
+    <Compile Include="SessionTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

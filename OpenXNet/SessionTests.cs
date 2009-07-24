@@ -1,11 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using MbUnit.Framework;
 
-namespace OpenXNet
-{
-    public class SessionTests
-    {
+namespace OpenXNet {
+    [TestFixture]
+    public class SessionTests {
+        [Test]
+        public void AddAdvertiser() {
+            using (var session = NewSession()) {
+                session.AddAdvertiser(new Advertiser {Name = "Pepito"});
+            }
+        }
+
+        [Test]
+        public void AddCampaign() {
+            using (var session = NewSession()) {
+                session.AddCampaign(new Campaign());
+            }
+        }
+
+        private SessionImpl NewSession() {
+            return new SessionImpl("root", "root", "http://10.0.0.62/openx/api/v2/xmlrpc/");
+        }
     }
 }

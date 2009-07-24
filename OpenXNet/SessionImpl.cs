@@ -23,5 +23,9 @@ namespace OpenXNet {
         public void AddCampaign(Campaign campaign) {
             svc.AddCampaign(sessionId, campaign);
         }
+
+        public void AddAdvertiser(Advertiser advertiser) {
+            svc.AddAdvertiser(sessionId, advertiser);
+        }
     }
 }

@@ -13,5 +13,8 @@ namespace OpenXNet {
 
         [XmlRpcMethod("ox.addCampaign")]
         void AddCampaign(string sessionId, Campaign campaign);
+
+        [XmlRpcMethod("ox.addAdvertiser")]
+        void AddAdvertiser(string sessionId, Advertiser advertiser);
     }
 }
