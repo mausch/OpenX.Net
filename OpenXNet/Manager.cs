@@ -1,6 +1,7 @@
 ﻿using CookComputing.XmlRpc;
 
 namespace OpenXNet {
+    [XmlRpcMissingMapping(MappingAction.Ignore)]
     public class Manager {
         [XmlRpcMember("agencyId")]
         public int Id { get; set; }
