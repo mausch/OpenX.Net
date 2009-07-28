@@ -64,7 +64,7 @@ namespace OpenXNet {
         public string AdServer { get; set; }
 
         [XmlRpcMember("aImage")]
-        public BannerImage[] Images { get; set; }
+        public BannerImage Image { get; set; }
 
         /// <summary>
         /// This field provides the URL for the image file for an external banner.

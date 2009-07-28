@@ -4,7 +4,7 @@ using CookComputing.XmlRpc;
 namespace OpenXNet {
     public partial interface IOpenXService {
         [XmlRpcMethod("ox.addBanner")]
-        void AddBanner(string sessionId, Banner banner);
+        int AddBanner(string sessionId, Banner banner);
 
         [XmlRpcMethod("ox.deleteBanner")]
         void DeleteBanner(string sessionId, int bannerId);
@@ -27,10 +27,24 @@ namespace OpenXNet {
         [XmlRpcMethod("ox.getBannerZoneStatistics")]
         object[] GetBannerZoneStatistics(string sessionId, int bannerId, DateTime startDate, DateTime endDate);
 
+        /// <summary>
+        /// Gets banner targeting information.
+        /// See https://developer.openx.org/wiki/display/API/OpenX+API+Targeting
+        /// </summary>
+        /// <param name="sessionId"></param>
+        /// <param name="bannerId"></param>
+        /// <returns></returns>
         [XmlRpcMethod("ox.getBannerTargeting")]
-        object[] GetBannerTargeting(string sessionId, int bannerId);
+        BannerTargeting[] GetBannerTargeting(string sessionId, int bannerId);
 
+        /// <summary>
+        /// Sets banner targeting information
+        /// See https://developer.openx.org/wiki/display/API/OpenX+API+Targeting
+        /// </summary>
+        /// <param name="sessionId"></param>
+        /// <param name="bannerId"></param>
+        /// <param name="targeting"></param>
         [XmlRpcMethod("ox.setBannerTargeting")]
-        void SetBannerTargeting(string sessionId, int bannerId, object[] targeting);
+        void SetBannerTargeting(string sessionId, int bannerId, BannerTargeting[] targeting);
     }
 }

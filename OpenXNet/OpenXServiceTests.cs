@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using CookComputing.XmlRpc;
 using MbUnit.Framework;
 
@@ -30,15 +31,22 @@ namespace OpenXNet {
         [Test]
         public void Login_and_add_banner() {
             WithSession((sessionId, svc) => {
-                svc.AddBanner(sessionId, new Banner());
+                var id = svc.AddBanner(sessionId, new Banner {
+                    CampaignId = 1,
+                    BannerName = "some banner " + Guid.NewGuid(),
+                    Width = 728,
+                    Height = 90,
+                    Url = "http://www.google.com",
+                    StorageType = "sql",
+                    Image = new BannerImage(@"..\..\banners\728x90_web_banner_example.gif"),
+                });
+                Console.WriteLine(id);
             });
         }
 
         [Test]
         public void AddCampaign() {
-            WithSession((sessionId, svc) => {
-                svc.AddCampaign(sessionId, new Campaign());
-            });
+            WithSession((sessionId, svc) => { svc.AddCampaign(sessionId, new Campaign()); });
         }
 
         [Test]
@@ -63,7 +71,7 @@ namespace OpenXNet {
                 var list = svc.GetCampaignListByAdvertiser(sessionId, 1);
                 foreach (var a in list)
                     Console.WriteLine(a.CampaignName);
-            });            
+            });
         }
 
         [Test]
@@ -71,7 +79,7 @@ namespace OpenXNet {
             WithSession((sessionId, svc) => {
                 var list = svc.GetCampaignPublisherStatistics(sessionId, 1, DateTime.Now.AddYears(-1), DateTime.Now);
                 Console.WriteLine(list.Length);
-            });                        
+            });
         }
 
         [Test]
@@ -88,13 +96,28 @@ namespace OpenXNet {
                 a(sessionId, svc);
             } finally {
                 svc.Logoff(sessionId);
-            }            
+            }
         }
 
         private IOpenXService GetSvc() {
             var svc = XmlRpcProxyGen.Create<IOpenXService>();
             svc.Url = "http://10.0.0.62/openx/api/v2/xmlrpc/";
+            svc.ResponseEvent += svc_ResponseEvent;
+            svc.RequestEvent += svc_RequestEvent;
             return svc;
+        }
+
+        private void svc_RequestEvent(object sender, XmlRpcRequestEventArgs args) {
+            PrintStream(args.RequestStream);
+        }
+
+        private void PrintStream(Stream args) {
+            using (var ts = new StreamReader(args))
+                Console.WriteLine(ts.ReadToEnd());
+        }
+
+        private void svc_ResponseEvent(object sender, XmlRpcResponseEventArgs args) {
+            PrintStream(args.ResponseStream);
         }
     }
 }
