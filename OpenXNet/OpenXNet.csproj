@@ -35,6 +35,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -48,6 +49,7 @@
     <Compile Include="IOpenXService_Campaign.cs" />
     <Compile Include="IOpenXService_Manager.cs" />
     <Compile Include="IOpenXService_User.cs" />
+    <Compile Include="IOpenXService_Zone.cs" />
     <Compile Include="ISession.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="IOpenXService.cs" />

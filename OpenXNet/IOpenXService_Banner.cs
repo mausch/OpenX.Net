@@ -18,13 +18,13 @@ namespace OpenXNet {
         [XmlRpcMethod("ox.getBannerListByCampaignId")]
         Banner[] GetBannersByCampaign(string sessionId, int campaignId);
 
-        [XmlRpcMethod("ox.getBannerDailyStatistics")]
+        [XmlRpcMethod("ox.bannerDailyStatistics")]
         object[] GetBannerDailyStatistics(string sessionId, int bannerId, DateTime startDate, DateTime endDate);
 
-        [XmlRpcMethod("ox.getBannerPublisherStatistics")]
+        [XmlRpcMethod("ox.bannerPublisherStatistics")]
         object[] GetBannerPublisherStatistics(string sessionId, int bannerId, DateTime startDate, DateTime endDate);
 
-        [XmlRpcMethod("ox.getBannerZoneStatistics")]
+        [XmlRpcMethod("ox.bannerZoneStatistics")]
         object[] GetBannerZoneStatistics(string sessionId, int bannerId, DateTime startDate, DateTime endDate);
 
         /// <summary>

@@ -4,7 +4,7 @@ using CookComputing.XmlRpc;
 namespace OpenXNet {
     public partial interface IOpenXService {
         [XmlRpcMethod("ox.addAgency")]
-        void AddManager(string sessionId, Manager manager);
+        int AddManager(string sessionId, Manager manager);
 
         [XmlRpcMethod("ox.deleteAgency")]
         void DeleteManager(string sessionId, int managerId);
@@ -28,7 +28,7 @@ namespace OpenXNet {
         object[] GetManagerDailyStatistics(string sessionId, int managerId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.getAgencyList")]
-        Manager[] GetManagerList(string sessionId);
+        Manager[] GetManagers(string sessionId);
 
         [XmlRpcMethod("ox.getAgencyPublisherStatistics")]
         object[] GetManagerPublisherStatistics(string sessionId, int managerId, DateTime startDate, DateTime endDate);

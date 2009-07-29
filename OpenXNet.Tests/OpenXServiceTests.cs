@@ -49,11 +49,11 @@ namespace OpenXNet {
         [Test]
         public void GetBanners() {
             WithSession((sessionId, svc) => {
-                var manager = svc.GetManagerList(sessionId)[0];
+                var manager = svc.GetManagers(sessionId)[0];
                 var advertiser = svc.GetAdvertisersByManager(sessionId, manager.Id)[0];
                 var campaign = svc.GetCampaignsByAdvertiser(sessionId, advertiser.Id)[0];
                 var banner = svc.GetBannersByCampaign(sessionId, campaign.Id)[0];
-
+                var stats = svc.GetBannerDailyStatistics(sessionId, banner.Id, DateTime.Now.AddYears(-1), DateTime.Now);
             });
         }
 

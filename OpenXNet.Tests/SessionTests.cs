@@ -1,7 +1,7 @@
 ﻿using System;
 using MbUnit.Framework;
 
-namespace OpenXNet {
+namespace OpenXNet.Tests {
     [TestFixture]
     public class SessionTests {
         [Test]
