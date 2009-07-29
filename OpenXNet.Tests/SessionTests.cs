@@ -8,7 +8,7 @@ namespace OpenXNet.Tests {
         public void AddAdvertiser() {
             using (var session = NewSession()) {
                 var advertiser = new Advertiser {AdvertiserName = "Fulano-" + Guid.NewGuid()};
-                session.AddAdvertiser(advertiser);
+                //session.AddAdvertiser(advertiser);
                 Console.WriteLine(advertiser.Id);
             }
         }
@@ -16,7 +16,7 @@ namespace OpenXNet.Tests {
         [Test]
         public void AddCampaign() {
             using (var session = NewSession()) {
-                session.AddCampaign(new Campaign());
+                //session.AddCampaign(new Campaign());
             }
         }
 

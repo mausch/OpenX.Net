@@ -38,18 +38,12 @@ namespace OpenXNet {
             svc.Logoff(sessionId);
         }
 
-        public void AddBanner(Banner banner) {
-            svc.AddBanner(sessionId, banner);
+        public IOpenXService Svc {
+            get { return svc; }
         }
 
-        public void AddCampaign(Campaign campaign) {
-            var id = svc.AddCampaign(sessionId, campaign);
-            campaign.Id = id;
-        }
-
-        public void AddAdvertiser(Advertiser advertiser) {
-            var id = svc.AddAdvertiser(sessionId, advertiser);
-            advertiser.Id = id;
+        public string SessionId {
+            get { return sessionId; }
         }
     }
 }

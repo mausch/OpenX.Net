@@ -2,8 +2,7 @@
 
 namespace OpenXNet {
     public interface ISession: IDisposable {
-        void AddBanner(Banner banner);
-        void AddCampaign(Campaign campaign);
-        void AddAdvertiser(Advertiser advertiser);
+        IOpenXService Svc { get; }
+        string SessionId { get; }
     }
 }
