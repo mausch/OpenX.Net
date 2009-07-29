@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractRepository.cs" />
+    <Compile Include="AbstractCRUDRepository.cs" />
     <Compile Include="Advertiser.cs" />
     <Compile Include="Banner.cs" />
     <Compile Include="BannerImage.cs" />
@@ -53,7 +53,7 @@
     <Compile Include="IOpenXService_Manager.cs" />
     <Compile Include="IOpenXService_User.cs" />
     <Compile Include="IOpenXService_Zone.cs" />
-    <Compile Include="IRepository.cs" />
+    <Compile Include="ICRUDRepository.cs" />
     <Compile Include="ISession.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="IOpenXService.cs" />

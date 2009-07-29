@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace OpenXNet {
-    public interface IBannerRepository : IRepository<Banner> {
+    public interface IBannerRepository : ICRUDRepository<Banner> {
         Banner[] GetBannersByCampaign(int campaignId);
 
         object[] GetBannerDailyStatistics(int bannerId, DateTime startDate, DateTime endDate);

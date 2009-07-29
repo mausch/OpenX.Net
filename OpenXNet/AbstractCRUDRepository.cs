@@ -1,8 +1,8 @@
 ﻿namespace OpenXNet {
-    public abstract class AbstractRepository<T> : IRepository<T> {
+    public abstract class AbstractCRUDRepository<T> : ICRUDRepository<T> {
         protected readonly ISession session;
 
-        protected AbstractRepository(ISession session) {
+        protected AbstractCRUDRepository(ISession session) {
             this.session = session;
         }
 

@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace OpenXNet {
-    public class BannerRepository : AbstractRepository<Banner>, IBannerRepository {
+    public class BannerRepository : AbstractCRUDRepository<Banner>, IBannerRepository {
         public BannerRepository(ISession session) : base(session) {}
 
         public override Banner Add(Banner entity) {
