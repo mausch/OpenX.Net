@@ -47,6 +47,17 @@ namespace OpenXNet {
         }
 
         [Test]
+        public void GetBanners() {
+            WithSession((sessionId, svc) => {
+                var manager = svc.GetManagerList(sessionId)[0];
+                var advertiser = svc.GetAdvertisersByManager(sessionId, manager.Id)[0];
+                var campaign = svc.GetCampaignsByAdvertiser(sessionId, advertiser.Id)[0];
+                var banner = svc.GetBannersByCampaign(sessionId, campaign.Id)[0];
+
+            });
+        }
+
+        [Test]
         public void AddCampaign() {
             WithSession((sessionId, svc) => { svc.AddCampaign(sessionId, new Campaign()); });
         }
@@ -70,7 +81,7 @@ namespace OpenXNet {
         [Test]
         public void GetCampaignList() {
             WithSession((sessionId, svc) => {
-                var list = svc.GetCampaignListByAdvertiser(sessionId, 1);
+                var list = svc.GetCampaignsByAdvertiser(sessionId, 1);
                 foreach (var a in list)
                     Console.WriteLine(a.CampaignName);
             });
