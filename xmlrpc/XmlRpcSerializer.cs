@@ -1180,9 +1180,10 @@ namespace CookComputing.XmlRpc
             + " " + StackDump(parseStack));
         string name = nameNode.FirstChild.Value;
         if (valueNode == null)
-          throw new XmlRpcInvalidXmlRpcException(parseStack.ParseType
-            + " contains struct member " + name + " with missing value "
-            + " " + StackDump(parseStack));
+            continue;
+            //throw new XmlRpcInvalidXmlRpcException(parseStack.ParseType
+            //  + " contains struct member " + name + " with missing value "
+            //  + " " + StackDump(parseStack));
         if (dupValue)
           throw new XmlRpcInvalidXmlRpcException(parseStack.ParseType
             + " contains member with more than one value element"
