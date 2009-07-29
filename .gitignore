@@ -6,3 +6,5 @@ OpenXNet/bin
 OpenXNet/obj
 xmlrpc/bin
 xmlrpc/obj
+OpenXNet.Tests/bin
+OpenXNet.Tests/obj
