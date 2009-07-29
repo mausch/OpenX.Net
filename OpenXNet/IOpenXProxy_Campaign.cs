@@ -2,7 +2,7 @@
 using CookComputing.XmlRpc;
 
 namespace OpenXNet {
-    public partial interface IOpenXService {
+    public partial interface IOpenXProxy {
         [XmlRpcMethod("ox.addCampaign")]
         int AddCampaign(string sessionId, Campaign campaign);
 

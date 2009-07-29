@@ -1,7 +1,7 @@
 ﻿using CookComputing.XmlRpc;
 
 namespace OpenXNet {
-    public partial interface IOpenXService {
+    public partial interface IOpenXProxy {
         [XmlRpcMethod("ox.addUser")]
         int AddUser(string sessionId, User user);
 

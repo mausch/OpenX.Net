@@ -102,7 +102,7 @@ namespace OpenXNet {
                 Console.WriteLine(m);
         }
 
-        public void WithSession(Action<string, IOpenXService> a) {
+        public void WithSession(Action<string, IOpenXProxy> a) {
             var svc = GetSvc();
             var sessionId = svc.Logon("root", "root");
             try {
@@ -112,8 +112,8 @@ namespace OpenXNet {
             }
         }
 
-        private IOpenXService GetSvc() {
-            var svc = XmlRpcProxyGen.Create<IOpenXService>();
+        private IOpenXProxy GetSvc() {
+            var svc = XmlRpcProxyGen.Create<IOpenXProxy>();
             svc.Url = "http://10.0.0.62/openx/api/v2/xmlrpc/";
             svc.ResponseEvent += svc_ResponseEvent;
             svc.RequestEvent += svc_RequestEvent;

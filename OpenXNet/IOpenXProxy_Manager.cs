@@ -2,7 +2,7 @@
 using CookComputing.XmlRpc;
 
 namespace OpenXNet {
-    public partial interface IOpenXService {
+    public partial interface IOpenXProxy {
         [XmlRpcMethod("ox.addAgency")]
         int AddManager(string sessionId, Manager manager);
 

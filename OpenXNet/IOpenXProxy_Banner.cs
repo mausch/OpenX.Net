@@ -2,7 +2,7 @@
 using CookComputing.XmlRpc;
 
 namespace OpenXNet {
-    public partial interface IOpenXService {
+    public partial interface IOpenXProxy {
         [XmlRpcMethod("ox.addBanner")]
         int AddBanner(string sessionId, Banner banner);
 

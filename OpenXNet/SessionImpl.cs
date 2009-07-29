@@ -4,17 +4,17 @@ using CookComputing.XmlRpc;
 
 namespace OpenXNet {
     public class SessionImpl : ISession {
-        private readonly IOpenXService svc;
+        private readonly IOpenXProxy svc;
         private readonly string sessionId;
 
         public SessionImpl(string sessionId, string url) {
             this.sessionId = sessionId;
-            svc = XmlRpcProxyGen.Create<IOpenXService>();
+            svc = XmlRpcProxyGen.Create<IOpenXProxy>();
             svc.Url = url;
         }
 
         public SessionImpl(string username, string password, string url) {
-            svc = XmlRpcProxyGen.Create<IOpenXService>();
+            svc = XmlRpcProxyGen.Create<IOpenXProxy>();
             svc.ResponseEvent += svc_ResponseEvent;
             svc.RequestEvent += svc_RequestEvent;
             svc.Url = url;
@@ -38,7 +38,7 @@ namespace OpenXNet {
             svc.Logoff(sessionId);
         }
 
-        public IOpenXService Svc {
+        public IOpenXProxy Svc {
             get { return svc; }
         }
 

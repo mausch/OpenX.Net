@@ -2,7 +2,7 @@
 
 namespace OpenXNet {
     public interface ISession: IDisposable {
-        IOpenXService Svc { get; }
+        IOpenXProxy Svc { get; }
         string SessionId { get; }
     }
 }
