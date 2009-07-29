@@ -38,7 +38,7 @@ namespace OpenXNet {
             svc.Logoff(sessionId);
         }
 
-        public void AddBanner(BannerWithImages banner) {
+        public void AddBanner(Banner banner) {
             svc.AddBanner(sessionId, banner);
         }
 

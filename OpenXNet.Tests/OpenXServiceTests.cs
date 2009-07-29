@@ -25,13 +25,13 @@ namespace OpenXNet {
         [ExpectedException(typeof (XmlRpcFaultException))]
         public void AddBanner_no_login() {
             var svc = GetSvc();
-            svc.AddBanner("", new BannerWithImages());
+            svc.AddBanner("", new Banner());
         }
 
         [Test]
         public void Login_and_add_banner() {
             WithSession((sessionId, svc) => {
-                var id = svc.AddBanner(sessionId, new BannerWithImages {
+                var id = svc.AddBanner(sessionId, new Banner {
                     CampaignId = 1,
                     BannerName = "some banner " + Guid.NewGuid(),
                     Width = 728,

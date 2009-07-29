@@ -57,6 +57,9 @@ namespace OpenXNet {
         [XmlRpcMember("aBackupImage")]
         public BannerImage[] BackupImages { get; set; }
 
+        [XmlRpcMember("aImage")]
+        public BannerImage Image { get; set; }
+
         /// <summary>
         /// A text field for HTML banners to indicate which adserver this ad is from
         /// </summary>

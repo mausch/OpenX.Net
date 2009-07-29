@@ -4,7 +4,7 @@ using CookComputing.XmlRpc;
 namespace OpenXNet {
     public partial interface IOpenXService {
         [XmlRpcMethod("ox.addBanner")]
-        int AddBanner(string sessionId, BannerWithImages banner);
+        int AddBanner(string sessionId, Banner banner);
 
         [XmlRpcMethod("ox.deleteBanner")]
         void DeleteBanner(string sessionId, int bannerId);
