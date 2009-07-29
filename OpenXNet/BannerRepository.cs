@@ -28,23 +28,23 @@ namespace OpenXNet {
         }
 
         public object[] GetBannerDailyStatistics(int bannerId, DateTime startDate, DateTime endDate) {
-            throw new NotImplementedException();
+            return session.Svc.GetBannerDailyStatistics(session.SessionId, bannerId, startDate, endDate);
         }
 
         public object[] GetBannerPublisherStatistics(int bannerId, DateTime startDate, DateTime endDate) {
-            throw new NotImplementedException();
+            return session.Svc.GetBannerPublisherStatistics(session.SessionId, bannerId, startDate, endDate);
         }
 
         public object[] GetBannerZoneStatistics(int bannerId, DateTime startDate, DateTime endDate) {
-            throw new NotImplementedException();
+            return session.Svc.GetBannerZoneStatistics(session.SessionId, bannerId, startDate, endDate);
         }
 
         public BannerTargeting[] GetBannerTargeting(int bannerId) {
-            throw new NotImplementedException();
+            return session.Svc.GetBannerTargeting(session.SessionId, bannerId);
         }
 
         public void SetBannerTargeting(int bannerId, BannerTargeting[] targeting) {
-            throw new NotImplementedException();
+            session.Svc.SetBannerTargeting(session.SessionId, bannerId, targeting);
         }
     }
 }
