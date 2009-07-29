@@ -63,9 +63,6 @@ namespace OpenXNet {
         [XmlRpcMember("adServer")]
         public string AdServer { get; set; }
 
-        [XmlRpcMember("aImage")]
-        public BannerImage Image { get; set; }
-
         /// <summary>
         /// This field provides the URL for the image file for an external banner.
         /// </summary>
@@ -79,7 +76,7 @@ namespace OpenXNet {
         /// Indicate if the banner is active
         /// </summary>
         [XmlRpcMember("status")]
-        public bool Status { get; set; }
+        public int Status { get; set; }
 
         /// <summary>
         /// HTML target of the banner (e.g. _blank, _self)
@@ -97,7 +94,7 @@ namespace OpenXNet {
         /// Transparency information for SWF banners
         /// </summary>
         [XmlRpcMember("transparent")]
-        public bool Transparent { get; set; }
+        public int Transparent { get; set; }
 
         /// <summary>
         /// Destination URL of the banner.
