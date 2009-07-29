@@ -22,7 +22,7 @@ namespace OpenXNet {
         object[] GetAdvertiserDailyStatistics(string sessionId, int advertiserId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.getAdvertiserListByAgencyId")]
-        Advertiser[] GetAdvertiserListByAgency(string sessionId, int agencyId);
+        Advertiser[] GetAdvertisersByManager(string sessionId, int managerId);
 
         [XmlRpcMethod("ox.getAdvertiserPublisherStatistics")]
         object[] GetAdvertiserPublisherStatistics(string sessionId, int advertiserId, DateTime startDate, DateTime endDate);
