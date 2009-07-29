@@ -46,6 +46,7 @@
     <Compile Include="BannerRepository.cs" />
     <Compile Include="BannerTargeting.cs" />
     <Compile Include="Campaign.cs" />
+    <Compile Include="IBannerRepository.cs" />
     <Compile Include="IOpenXService_Advertiser.cs" />
     <Compile Include="IOpenXService_Banner.cs" />
     <Compile Include="IOpenXService_Campaign.cs" />

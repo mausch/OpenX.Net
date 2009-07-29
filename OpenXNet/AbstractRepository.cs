@@ -8,7 +8,7 @@
 
         public abstract T Add(T entity);
         public abstract T Update(T entity);
-        public abstract T Delete(T entity);
+        public abstract void Delete(int id);
         public abstract T Get(int id);
     }
 }
