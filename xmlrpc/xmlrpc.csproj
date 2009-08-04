@@ -236,15 +236,4 @@
     <PostBuildEvent>
     </PostBuildEvent>
   </PropertyGroup>
-  <Target Name="BeforeBuild">
-    <CreateItem Include="AssemblyBuildNumber.cs" Condition="'$(BuildingInsideVisualStudio)' == ''">
-      <Output TaskParameter="Include" ItemName="Compile" />
-    </CreateItem>
-    <CreateItem Include="AssemblyDescFX1_0.cs" Condition="'$(TargetFX1_0)'=='true'">
-      <Output TaskParameter="Include" ItemName="Compile" />
-    </CreateItem>
-    <CreateItem Include="AssemblyDesc.cs" Condition="'$(TargetFX1_0)'!='true'">
-      <Output TaskParameter="Include" ItemName="Compile" />
-    </CreateItem>
-  </Target>
 </Project>
