@@ -3,13 +3,13 @@ using System.IO;
 using CookComputing.XmlRpc;
 using MbUnit.Framework;
 
-namespace OpenXNet {
+namespace OpenXNet.Tests {
     [TestFixture]
     public class OpenXServiceTests {
         [Test]
         public void Login_OK() {
             var svc = GetSvc();
-            var sessionId = svc.Logon("root", "root");
+            var sessionId = svc.Logon(Config.Username, Config.Password);
             Console.WriteLine(sessionId);
             svc.Logoff(sessionId);
         }
@@ -18,7 +18,7 @@ namespace OpenXNet {
         [ExpectedException(typeof (XmlRpcFaultException))]
         public void Login_error() {
             var svc = GetSvc();
-            svc.Logon("root", "rootasd");
+            svc.Logon(Config.Username, Config.Password + "asd");
         }
 
         [Test]
@@ -104,7 +104,7 @@ namespace OpenXNet {
 
         public void WithSession(Action<string, IOpenXProxy> a) {
             var svc = GetSvc();
-            var sessionId = svc.Logon("root", "root");
+            var sessionId = svc.Logon(Config.Username, Config.Password);
             try {
                 a(sessionId, svc);
             } finally {
@@ -114,7 +114,7 @@ namespace OpenXNet {
 
         private IOpenXProxy GetSvc() {
             var svc = XmlRpcProxyGen.Create<IOpenXProxy>();
-            svc.Url = "http://10.0.0.62/openx/api/v2/xmlrpc/";
+            svc.Url = Config.Url;
             svc.ResponseEvent += svc_ResponseEvent;
             svc.RequestEvent += svc_RequestEvent;
             return svc;

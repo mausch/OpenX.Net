@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="openx.url" value="http://localhost:10002/openx/api/v2/xmlrpc/"/>
+    <add key="openx.username" value="root"/>
+    <add key="openx.password" value="root"/>
+  </appSettings>
+</configuration>

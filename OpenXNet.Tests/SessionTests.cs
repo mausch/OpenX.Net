@@ -21,7 +21,7 @@ namespace OpenXNet.Tests {
         }
 
         private SessionImpl NewSession() {
-            return new SessionImpl("root", "root", "http://10.0.0.62/openx/api/v2/xmlrpc/");
+            return new SessionImpl(Config.Username, Config.Password, Config.Url);
         }
     }
 }

@@ -5,7 +5,7 @@ namespace OpenXNet.Tests {
     public class RepositoryTests {
         [Test]
         public void BannerRepository() {
-            using (var session = new SessionImpl("root", "root", "http://10.0.0.62/openx/api/v2/xmlrpc/")) {
+            using (var session = new SessionImpl(Config.Username, Config.Password, Config.Url)) {
                 var bannerRepo = new BannerRepository(session);
                 var banner = bannerRepo.Get(1);
             }
