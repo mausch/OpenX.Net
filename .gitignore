@@ -1,6 +1,8 @@
 *.suo
+*.bak
 *.pdb
 *.user
+*.sln.cache
 _ReSharper.OpenXNet
 OpenXNet/bin
 OpenXNet/obj
@@ -8,3 +10,4 @@ xmlrpc/bin
 xmlrpc/obj
 OpenXNet.Tests/bin
 OpenXNet.Tests/obj
+OpenXNet.Tests/App.config
