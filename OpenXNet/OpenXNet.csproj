@@ -54,6 +54,7 @@
     <Compile Include="ISession_Banner.cs" />
     <Compile Include="ISession_Campaign.cs" />
     <Compile Include="ISession_Manager.cs" />
+    <Compile Include="ISession_User.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="IOpenXProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="SessionImpl_Banner.cs" />
     <Compile Include="SessionImpl_Campaign.cs" />
     <Compile Include="SessionImpl_Manager.cs" />
+    <Compile Include="SessionImpl_User.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Zone.cs" />
     <Compile Include="ZoneType.cs" />
