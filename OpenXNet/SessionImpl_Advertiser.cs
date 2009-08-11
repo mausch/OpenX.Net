@@ -19,7 +19,9 @@ using System;
 namespace OpenXNet {
     public partial class SessionImpl {
         public int AddAdvertiser(Advertiser advertiser) {
-            return svc.AddAdvertiser(sessionId, advertiser);
+            var id = svc.AddAdvertiser(sessionId, advertiser);
+            advertiser.Id = id;
+            return id;
         }
 
         public void DeleteAdvertiser(int advertiserId) {
