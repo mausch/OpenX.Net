@@ -18,7 +18,7 @@ using System;
 
 namespace OpenXNet {
     public partial interface ISession {
-        int AddZone(Zone zone);
+        Zone AddZone(Zone zone);
 
         void DeleteZone(int zoneId);
 

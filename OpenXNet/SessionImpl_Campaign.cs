@@ -18,10 +18,9 @@ using System;
 
 namespace OpenXNet {
     public partial class SessionImpl {
-        public int AddCampaign(Campaign campaign) {
-            var id = svc.AddCampaign(sessionId, campaign);
-            campaign.Id = id;
-            return id;
+        public Campaign AddCampaign(Campaign campaign) {
+            campaign.Id = svc.AddCampaign(sessionId, campaign);
+            return campaign;
         }
 
         public Campaign GetCampaign(int campaignId) {

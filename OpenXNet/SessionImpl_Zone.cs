@@ -18,10 +18,9 @@ using System;
 
 namespace OpenXNet {
     public partial class SessionImpl {
-        public int AddZone(Zone zone) {
-            var id = svc.AddZone(sessionId, zone);
-            zone.Id = id;
-            return id;
+        public Zone AddZone(Zone zone) {
+            zone.Id = svc.AddZone(sessionId, zone);
+            return zone;
         }
 
         public void DeleteZone(int zoneId) {

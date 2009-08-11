@@ -15,6 +15,7 @@
 #endregion
 
 using System;
+using System.Linq;
 using MbUnit.Framework;
 
 namespace OpenXNet.Tests {
@@ -30,10 +31,26 @@ namespace OpenXNet.Tests {
         }
 
         [Test]
+        public void GetCampaign() {
+            using (var session = NewSession()) {
+                var adv = (from manager in session.GetManagers()
+                           from advertiser in session.GetAdvertisersByManager(manager.Id)
+                           from campaign in session.GetCampaignsByAdvertiser(advertiser.Id)
+                           select campaign).First();
+                if (adv != null)
+                    Console.WriteLine(adv.CampaignName);
+            }
+        }
+
+        [Test]
         public void AddCampaign() {
             using (var session = NewSession()) {
-                session.AddCampaign(new Campaign {
-                    AdvertiserId = session.GetAdvertiser(1).Id,
+                var a = (from manager in session.GetManagers()
+                         from advertiser in session.GetAdvertisersByManager(manager.Id)
+                         select advertiser).First();
+                var c = session.AddCampaign(new Campaign {
+                    AdvertiserId = a.Id,
+                    CampaignName = "campaign-" + Guid.NewGuid(),
                 });
             }
         }

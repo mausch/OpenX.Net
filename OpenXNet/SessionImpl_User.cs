@@ -14,14 +14,11 @@
 // limitations under the License.
 #endregion
 
-using System;
-
 namespace OpenXNet {
     public partial class SessionImpl {
-        public int AddUser(User user) {
-            var id = svc.AddUser(sessionId, user);
-            user.Id = id;
-            return id;
+        public User AddUser(User user) {
+            user.Id = svc.AddUser(sessionId, user);
+            return user;
         }
 
         public void DeleteUser(int userId) {

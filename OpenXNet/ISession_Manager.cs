@@ -18,7 +18,7 @@ using System;
 
 namespace OpenXNet {
     public partial interface ISession {
-        int AddManager(Manager manager);
+        Manager AddManager(Manager manager);
 
         void DeleteManager(int managerId);
 

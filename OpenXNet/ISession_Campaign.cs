@@ -18,7 +18,7 @@ using System;
 
 namespace OpenXNet {
     public partial interface ISession {
-        int AddCampaign(Campaign campaign);
+        Campaign AddCampaign(Campaign campaign);
 
         Campaign GetCampaign(int campaignId);
 

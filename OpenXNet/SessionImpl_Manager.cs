@@ -18,10 +18,9 @@ using System;
 
 namespace OpenXNet {
     public partial class SessionImpl {
-        public int AddManager(Manager manager) {
-            var id = svc.AddManager(sessionId, manager);
-            manager.Id = id;
-            return id;
+        public Manager AddManager(Manager manager) {
+            manager.Id = svc.AddManager(sessionId, manager);
+            return manager;
         }
 
         public void DeleteManager(int managerId) {

@@ -16,7 +16,7 @@
 
 namespace OpenXNet {
     public partial interface ISession {
-        int AddUser(User user);
+        User AddUser(User user);
 
         void DeleteUser(int userId);
 

@@ -18,7 +18,7 @@ using System;
 
 namespace OpenXNet {
     public partial interface ISession {
-        int AddBanner(Banner banner);
+        Banner AddBanner(Banner banner);
         void DeleteBanner(int bannerId);
         void ModifyBanner(Banner banner);
         Banner GetBanner(int bannerId);

@@ -18,10 +18,9 @@ using System;
 
 namespace OpenXNet {
     public partial class SessionImpl {
-        public int AddBanner(Banner banner) {
-            var id = svc.AddBanner(sessionId, banner);
-            banner.Id = id;
-            return id;
+        public Banner AddBanner(Banner banner) {
+            banner.Id = svc.AddBanner(sessionId, banner);
+            return banner;
         }
 
         public void DeleteBanner(int bannerId) {
