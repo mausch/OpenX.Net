@@ -17,7 +17,7 @@
 using System;
 
 namespace OpenXNet {
-    public interface ISession : IDisposable {
+    public partial interface ISession : IDisposable {
         int AddAdvertiser(Advertiser advertiser);
 
         void DeleteAdvertiser(int advertiserId);
