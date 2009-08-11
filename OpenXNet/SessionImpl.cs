@@ -19,7 +19,7 @@ using System.IO;
 using CookComputing.XmlRpc;
 
 namespace OpenXNet {
-    public class SessionImpl : ISession {
+    public partial class SessionImpl : ISession {
         private readonly IOpenXProxy svc;
         private readonly string sessionId;
         private readonly bool ownsSession;
@@ -56,14 +56,6 @@ namespace OpenXNet {
         public void Dispose() {
             if (ownsSession)
                 svc.Logoff(sessionId);
-        }
-
-        public IOpenXProxy Svc {
-            get { return svc; }
-        }
-
-        public string SessionId {
-            get { return sessionId; }
         }
     }
 }

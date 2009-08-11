@@ -39,28 +39,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractCRUDRepository.cs" />
     <Compile Include="Advertiser.cs" />
     <Compile Include="Banner.cs" />
     <Compile Include="BannerImage.cs" />
-    <Compile Include="BannerRepository.cs" />
     <Compile Include="BannerTargeting.cs" />
     <Compile Include="Campaign.cs" />
-    <Compile Include="IAdvertiserRepository.cs" />
-    <Compile Include="IBannerRepository.cs" />
     <Compile Include="IOpenXProxy_Advertiser.cs" />
     <Compile Include="IOpenXProxy_Banner.cs" />
     <Compile Include="IOpenXProxy_Campaign.cs" />
     <Compile Include="IOpenXProxy_Manager.cs" />
     <Compile Include="IOpenXProxy_User.cs" />
     <Compile Include="IOpenXProxy_Zone.cs" />
-    <Compile Include="ICRUDRepository.cs" />
-    <Compile Include="IRepository.cs" />
-    <Compile Include="ISession.cs" />
+    <Compile Include="ISession_Advertiser.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="IOpenXProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SessionImpl.cs" />
+    <Compile Include="SessionImpl_Advertiser.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Zone.cs" />
     <Compile Include="ZoneType.cs" />

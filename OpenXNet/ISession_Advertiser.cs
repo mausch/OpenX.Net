@@ -17,12 +17,25 @@
 using System;
 
 namespace OpenXNet {
-    public interface IAdvertiserRepository : ICRUDRepository<Advertiser> {
+    public interface ISession : IDisposable {
+        int AddAdvertiser(Advertiser advertiser);
+
+        void DeleteAdvertiser(int advertiserId);
+
+        Advertiser GetAdvertiser(int advertiserId);
+
         object[] GetAdvertiserBannerStatistics(int advertiserId, DateTime startDate, DateTime endDate);
+
         object[] GetAdvertiserCampaignStatistics(int advertiserId, DateTime startDate, DateTime endDate);
+
         object[] GetAdvertiserDailyStatistics(int advertiserId, DateTime startDate, DateTime endDate);
+
         Advertiser[] GetAdvertisersByManager(int managerId);
+
         object[] GetAdvertiserPublisherStatistics(int advertiserId, DateTime startDate, DateTime endDate);
+
         object[] GetAdvertiserZoneStatistics(int advertiserId, DateTime startDate, DateTime endDate);
+
+        void ModifyAdvertiser(Advertiser advertiser);
     }
 }
