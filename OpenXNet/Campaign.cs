@@ -51,7 +51,7 @@ namespace OpenXNet {
         public string Comments { get; set; }
 
         [XmlRpcMember("endDate")]
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
 
         /// <summary>
         /// Number of impressions booked for the campaign.
@@ -63,7 +63,7 @@ namespace OpenXNet {
         public int Priority { get; set; }
 
         [XmlRpcMember("revenue")]
-        public decimal Revenue { get; set; }
+        public double Revenue { get; set; }
 
         [XmlRpcMember("revenueType")]
         public int RevenueType { get; set; }
@@ -75,7 +75,7 @@ namespace OpenXNet {
         public int SessionCapping { get; set; }
 
         [XmlRpcMember("startDate")]
-        public DateTime StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
 
         [XmlRpcMember("targetClicks")]
         public int TargetClicks { get; set; }

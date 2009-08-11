@@ -15,7 +15,9 @@
 #endregion
 
 using System;
+using System.IO;
 using System.Linq;
+using CookComputing.XmlRpc;
 using MbUnit.Framework;
 
 namespace OpenXNet.Tests {
@@ -56,7 +58,24 @@ namespace OpenXNet.Tests {
         }
 
         private SessionImpl NewSession() {
-            return new SessionImpl(Config.Username, Config.Password, Config.Url);
+            var proxy = XmlRpcProxyGen.Create<IOpenXProxy>();
+            proxy.Url = Config.Url;
+            proxy.ResponseEvent += proxy_ResponseEvent;
+            proxy.RequestEvent += proxy_RequestEvent;
+            return new SessionImpl(proxy, Config.Username, Config.Password);
+        }
+
+        private void PrintStream(Stream s) {
+            using (var sw = new StreamReader(s))
+                Console.WriteLine(sw.ReadToEnd());
+        }
+
+        private void proxy_RequestEvent(object sender, XmlRpcRequestEventArgs args) {
+            PrintStream(args.RequestStream);
+        }
+
+        private void proxy_ResponseEvent(object sender, XmlRpcResponseEventArgs args) {
+            PrintStream(args.ResponseStream);
         }
     }
 }
