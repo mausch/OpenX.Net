@@ -14,8 +14,6 @@
 // limitations under the License.
 #endregion
 
-using System;
-using System.IO;
 using CookComputing.XmlRpc;
 
 namespace OpenXNet {
@@ -33,24 +31,15 @@ namespace OpenXNet {
 
         public SessionImpl(string username, string password, string url) {
             svc = XmlRpcProxyGen.Create<IOpenXProxy>();
-            svc.ResponseEvent += svc_ResponseEvent;
-            svc.RequestEvent += svc_RequestEvent;
             svc.Url = url;
             sessionId = svc.Logon(username, password);
             ownsSession = true;
         }
 
-        private void svc_RequestEvent(object sender, XmlRpcRequestEventArgs args) {
-            PrintStream(args.RequestStream);
-        }
-
-        private void PrintStream(Stream args) {
-            using (var ts = new StreamReader(args))
-                Console.WriteLine(ts.ReadToEnd());
-        }
-
-        private void svc_ResponseEvent(object sender, XmlRpcResponseEventArgs args) {
-            PrintStream(args.ResponseStream);
+        public SessionImpl(IOpenXProxy proxy, string username, string password) {
+            svc = proxy;
+            sessionId = svc.Logon(username, password);
+            ownsSession = true;
         }
 
         public void Dispose() {
