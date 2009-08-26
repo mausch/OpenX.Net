@@ -38,7 +38,7 @@ namespace OpenXNet {
         DailyStats[] GetBannerDailyStatistics(string sessionId, int bannerId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.bannerPublisherStatistics")]
-        object[] GetBannerPublisherStatistics(string sessionId, int bannerId, DateTime startDate, DateTime endDate);
+        PublisherStats[] GetBannerPublisherStatistics(string sessionId, int bannerId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.bannerZoneStatistics")]
         object[] GetBannerZoneStatistics(string sessionId, int bannerId, DateTime startDate, DateTime endDate);
