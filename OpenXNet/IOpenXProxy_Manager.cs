@@ -34,24 +34,22 @@ namespace OpenXNet {
         [XmlRpcMethod("ox.agencyAdvertiserStatistics")]
         AdvertiserStats[] GetManagerAdvertiserStatistics(string sessionId, int managerId, DateTime startDate, DateTime endDate);
 
-        [XmlRpcMethod("ox.getAgencyBannerStatistics")]
+        [XmlRpcMethod("ox.agencyBannerStatistics")]
         object[] GetManagerBannerStatistics(string sessionId, int managerId, DateTime startDate, DateTime endDate);
 
-        [XmlRpcMethod("ox.getAgencyCampaignStatistics")]
+        [XmlRpcMethod("ox.agencyCampaignStatistics")]
         object[] GetManagerCampaignStatistics(string sessionId, int managerId, DateTime startDate, DateTime endDate);
 
-        [XmlRpcMethod("ox.getAgencyDailyStatistics")]
+        [XmlRpcMethod("ox.agencyDailyStatistics")]
         object[] GetManagerDailyStatistics(string sessionId, int managerId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.getAgencyList")]
         Manager[] GetManagers(string sessionId);
 
-        [XmlRpcMethod("ox.getAgencyPublisherStatistics")]
+        [XmlRpcMethod("ox.agencyPublisherStatistics")]
         object[] GetManagerPublisherStatistics(string sessionId, int managerId, DateTime startDate, DateTime endDate);
 
-        [XmlRpcMethod("ox.getAgencyZoneStatistics")]
+        [XmlRpcMethod("ox.agencyZoneStatistics")]
         object[] GetManagerZoneStatistics(string sessionId, int managerId, DateTime startDate, DateTime endDate);
-
-
     }
 }
