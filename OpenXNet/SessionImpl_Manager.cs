@@ -55,7 +55,7 @@ namespace OpenXNet {
             return svc.GetManagers(sessionId);
         }
 
-        public object[] GetManagerPublisherStatistics(int managerId, DateTime startDate, DateTime endDate) {
+        public PublisherStats[] GetManagerPublisherStatistics(int managerId, DateTime startDate, DateTime endDate) {
             return svc.GetManagerPublisherStatistics(sessionId, managerId, startDate, endDate);
         }
 

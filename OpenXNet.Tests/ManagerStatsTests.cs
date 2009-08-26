@@ -45,9 +45,17 @@ namespace OpenXNet.Tests {
         }
 
         [Test]
-        public void GetManagerDailyStatistics() {
+        public void ManagerDailyStatistics() {
             using (var session = NewSession()) {
                 var r = session.GetManagerDailyStatistics(1, DateTime.Now.AddYears(-1), DateTime.Now);
+                Console.WriteLine(r.Length);
+            }
+        }
+
+        [Test]
+        public void ManagerPublisherStatistics() {
+            using (var session = NewSession()) {
+                var r = session.GetManagerPublisherStatistics(1, DateTime.Now.AddYears(-1), DateTime.Now);
                 Console.WriteLine(r.Length);
             }
         }
