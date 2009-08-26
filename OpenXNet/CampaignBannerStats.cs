@@ -14,21 +14,20 @@
 // limitations under the License.
 #endregion
 
-using System;
 using CookComputing.XmlRpc;
 
 namespace OpenXNet {
-    public class Stats {
-        [XmlRpcMember("impressions")]
-        public int Impressions { get; set; }
+    public class CampaignBannerStats : Stats {
+        [XmlRpcMember("campaignId")]
+        public int CampaignId { get; set; }
 
-        [XmlRpcMember("clicks")]
-        public int Clicks { get; set; }
+        [XmlRpcMember("campaignName")]
+        public string CampaignName { get; set; }
 
-        [XmlRpcMember("requests")]
-        public int Requests { get; set; }
+        [XmlRpcMember("bannerId")]
+        public int BannerId { get; set; }
 
-        [XmlRpcMember("revenue")]
-        public double Revenue { get; set; }
+        [XmlRpcMember("bannerName")]
+        public string BannerName { get; set; }
     }
 }

@@ -29,13 +29,13 @@ namespace OpenXNet {
         Advertiser GetAdvertiser(string sessionId, int advertiserId);
 
         [XmlRpcMethod("ox.advertiserBannerStatistics")]
-        object[] GetAdvertiserBannerStatistics(string sessionId, int advertiserId, DateTime startDate, DateTime endDate);
+        CampaignBannerStats[] GetAdvertiserBannerStatistics(string sessionId, int advertiserId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.advertiserCampaignStatistics")]
         object[] GetAdvertiserCampaignStatistics(string sessionId, int advertiserId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.advertiserDailyStatistics")]
-        Stats[] GetAdvertiserDailyStatistics(string sessionId, int advertiserId, DateTime startDate, DateTime endDate);
+        DailyStats[] GetAdvertiserDailyStatistics(string sessionId, int advertiserId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.getAdvertiserListByAgencyId")]
         Advertiser[] GetAdvertisersByManager(string sessionId, int managerId);

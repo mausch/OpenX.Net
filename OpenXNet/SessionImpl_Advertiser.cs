@@ -31,7 +31,7 @@ namespace OpenXNet {
             return svc.GetAdvertiser(sessionId, advertiserId);
         }
 
-        public object[] GetAdvertiserBannerStatistics(int advertiserId, DateTime startDate, DateTime endDate) {
+        public CampaignBannerStats[] GetAdvertiserBannerStatistics(int advertiserId, DateTime startDate, DateTime endDate) {
             return svc.GetAdvertiserBannerStatistics(sessionId, advertiserId, startDate, endDate);
         }
 
@@ -39,7 +39,7 @@ namespace OpenXNet {
             return svc.GetAdvertiserCampaignStatistics(sessionId, advertiserId, startDate, endDate);
         }
 
-        public Stats[] GetAdvertiserDailyStatistics(int advertiserId, DateTime startDate, DateTime endDate) {
+        public DailyStats[] GetAdvertiserDailyStatistics(int advertiserId, DateTime startDate, DateTime endDate) {
             return svc.GetAdvertiserDailyStatistics(sessionId, advertiserId, startDate, endDate);
         }
 

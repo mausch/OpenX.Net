@@ -18,17 +18,8 @@ using System;
 using CookComputing.XmlRpc;
 
 namespace OpenXNet {
-    public class Stats {
-        [XmlRpcMember("impressions")]
-        public int Impressions { get; set; }
-
-        [XmlRpcMember("clicks")]
-        public int Clicks { get; set; }
-
-        [XmlRpcMember("requests")]
-        public int Requests { get; set; }
-
-        [XmlRpcMember("revenue")]
-        public double Revenue { get; set; }
+    public class DailyStats : Stats {
+        [XmlRpcMember("day")]
+        public DateTime Day { get; set; }
     }
 }
