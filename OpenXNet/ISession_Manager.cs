@@ -30,7 +30,7 @@ namespace OpenXNet {
 
         AdvertiserCampaignBannerStats[] GetManagerBannerStatistics(int managerId, DateTime startDate, DateTime endDate);
 
-        object[] GetManagerCampaignStatistics(int managerId, DateTime startDate, DateTime endDate);
+        AdvertiserCampaignStats[] GetManagerCampaignStatistics(int managerId, DateTime startDate, DateTime endDate);
 
         object[] GetManagerDailyStatistics(int managerId, DateTime startDate, DateTime endDate);
 
