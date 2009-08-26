@@ -55,7 +55,7 @@ namespace OpenXNet {
             return svc.GetZoneCampaignStatistics(sessionId, zoneId, startDate, endDate);
         }
 
-        public object[] GetZoneDailyStatistics(int zoneId, DateTime startDate, DateTime endDate) {
+        public DailyStats[] GetZoneDailyStatistics(int zoneId, DateTime startDate, DateTime endDate) {
             return svc.GetZoneDailyStatistics(sessionId, zoneId, startDate, endDate);
         }
 

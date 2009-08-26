@@ -47,7 +47,7 @@ namespace OpenXNet {
         AdvertiserCampaignStats[] GetZoneCampaignStatistics(string sessionId, int zoneId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.zoneDailyStatistics")]
-        object[] GetZoneDailyStatistics(string sessionId, int zoneId, DateTime startDate, DateTime endDate);
+        DailyStats[] GetZoneDailyStatistics(string sessionId, int zoneId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.linkBanner")]
         void LinkBanner(string sessionId, int zoneId, int bannerId);
