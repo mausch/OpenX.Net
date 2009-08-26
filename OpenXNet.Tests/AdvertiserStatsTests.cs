@@ -27,7 +27,7 @@ namespace OpenXNet.Tests {
                 foreach (var stat in r) {
                     Console.WriteLine("Stats for day {0}:", stat.Day.ToShortDateString());
                     Console.WriteLine("Impressions: {0}", stat.Impressions);
-                    Console.WriteLine("Clicks: {0}", stat.Impressions);
+                    Console.WriteLine("Clicks: {0}", stat.Clicks);
                     Console.WriteLine("Requests: {0}", stat.Requests);
                     Console.WriteLine("Revenue: {0}", ((decimal) stat.Revenue).ToString("C"));
                 }
@@ -43,7 +43,7 @@ namespace OpenXNet.Tests {
                     Console.WriteLine("Campaign {0}: {1}", stat.CampaignId, stat.CampaignName);
                     Console.WriteLine("Banner {0}: {1}", stat.BannerId, stat.BannerName);
                     Console.WriteLine("Impressions: {0}", stat.Impressions);
-                    Console.WriteLine("Clicks: {0}", stat.Impressions);
+                    Console.WriteLine("Clicks: {0}", stat.Clicks);
                     Console.WriteLine("Requests: {0}", stat.Requests);
                     Console.WriteLine("Revenue: {0}", ((decimal) stat.Revenue).ToString("C"));
                 }
@@ -58,7 +58,7 @@ namespace OpenXNet.Tests {
                 foreach (var stat in r) {
                     Console.WriteLine("Campaign {0}: {1}", stat.CampaignId, stat.CampaignName);
                     Console.WriteLine("Impressions: {0}", stat.Impressions);
-                    Console.WriteLine("Clicks: {0}", stat.Impressions);
+                    Console.WriteLine("Clicks: {0}", stat.Clicks);
                     Console.WriteLine("Requests: {0}", stat.Requests);
                     Console.WriteLine("Revenue: {0}", ((decimal) stat.Revenue).ToString("C"));
                 }
@@ -73,7 +73,7 @@ namespace OpenXNet.Tests {
                 foreach (var stat in r) {
                     Console.WriteLine("Publisher {0}: {1}", stat.PublisherId, stat.PublisherName);
                     Console.WriteLine("Impressions: {0}", stat.Impressions);
-                    Console.WriteLine("Clicks: {0}", stat.Impressions);
+                    Console.WriteLine("Clicks: {0}", stat.Clicks);
                     Console.WriteLine("Requests: {0}", stat.Requests);
                     Console.WriteLine("Revenue: {0}", ((decimal) stat.Revenue).ToString("C"));
                 }
@@ -89,7 +89,7 @@ namespace OpenXNet.Tests {
                     Console.WriteLine("Publisher {0}: {1}", stat.PublisherId, stat.PublisherName);
                     Console.WriteLine("Zone {0}: {1}", stat.ZoneId, stat.ZoneName);
                     Console.WriteLine("Impressions: {0}", stat.Impressions);
-                    Console.WriteLine("Clicks: {0}", stat.Impressions);
+                    Console.WriteLine("Clicks: {0}", stat.Clicks);
                     Console.WriteLine("Requests: {0}", stat.Requests);
                     Console.WriteLine("Revenue: {0}", ((decimal) stat.Revenue).ToString("C"));
                 }
