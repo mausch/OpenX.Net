@@ -26,7 +26,7 @@ namespace OpenXNet {
 
         void ModifyCampaign(Campaign campaign);
 
-        object[] GetCampaignBannerStatistics(int campaignId, DateTime startDate, DateTime endDate);
+        CampaignBannerStats[] GetCampaignBannerStatistics(int campaignId, DateTime startDate, DateTime endDate);
 
         object[] GetCampaignDailyStatistics(int campaignId, DateTime startDate, DateTime endDate);
 

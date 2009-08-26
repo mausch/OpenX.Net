@@ -51,6 +51,7 @@
     <Compile Include="AdvertiserStatsTests.cs" />
     <Compile Include="BannerStatsTests.cs" />
     <Compile Include="BaseSessionTests.cs" />
+    <Compile Include="CampaignStatsTests.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="OpenXServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

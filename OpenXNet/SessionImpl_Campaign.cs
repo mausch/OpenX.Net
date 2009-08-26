@@ -35,7 +35,7 @@ namespace OpenXNet {
             svc.ModifyCampaign(sessionId, campaign);
         }
 
-        public object[] GetCampaignBannerStatistics(int campaignId, DateTime startDate, DateTime endDate) {
+        public CampaignBannerStats[] GetCampaignBannerStatistics(int campaignId, DateTime startDate, DateTime endDate) {
             return svc.GetCampaignBannerStatistics(sessionId, campaignId, startDate, endDate);
         }
 

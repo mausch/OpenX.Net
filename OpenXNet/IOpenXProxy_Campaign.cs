@@ -32,7 +32,7 @@ namespace OpenXNet {
         void ModifyCampaign(string sessionId, Campaign campaign);
 
         [XmlRpcMethod("ox.campaignBannerStatistics")]
-        object[] GetCampaignBannerStatistics(string sessionId, int campaignId, DateTime startDate, DateTime endDate);
+        CampaignBannerStats[] GetCampaignBannerStatistics(string sessionId, int campaignId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.campaignDailyStatistics")]
         object[] GetCampaignDailyStatistics(string sessionId, int campaignId, DateTime startDate, DateTime endDate);
