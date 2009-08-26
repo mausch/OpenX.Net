@@ -34,7 +34,7 @@ namespace OpenXNet {
 
         PublisherStats[] GetAdvertiserPublisherStatistics(int advertiserId, DateTime startDate, DateTime endDate);
 
-        object[] GetAdvertiserZoneStatistics(int advertiserId, DateTime startDate, DateTime endDate);
+        PublisherZoneStats[] GetAdvertiserZoneStatistics(int advertiserId, DateTime startDate, DateTime endDate);
 
         void ModifyAdvertiser(Advertiser advertiser);
     }

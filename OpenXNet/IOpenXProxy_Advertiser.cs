@@ -44,7 +44,7 @@ namespace OpenXNet {
         PublisherStats[] GetAdvertiserPublisherStatistics(string sessionId, int advertiserId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.advertiserZoneStatistics")]
-        object[] GetAdvertiserZoneStatistics(string sessionId, int advertiserId, DateTime startDate, DateTime endDate);
+        PublisherZoneStats[] GetAdvertiserZoneStatistics(string sessionId, int advertiserId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.modifyAdvertiser")]
         void ModifyAdvertiser(string sessionId, Advertiser advertiser);
