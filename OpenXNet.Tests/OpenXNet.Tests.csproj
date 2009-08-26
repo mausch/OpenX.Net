@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvertiserStatsTests.cs" />
+    <Compile Include="BannerStatsTests.cs" />
     <Compile Include="BaseSessionTests.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="OpenXServiceTests.cs" />
