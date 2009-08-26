@@ -27,5 +27,13 @@ namespace OpenXNet.Tests {
                 Console.WriteLine(r.Length);
             }
         }
+
+        [Test]
+        public void ManagerBannerStatistics() {
+            using (var session = NewSession()) {
+                var r = session.GetManagerBannerStatistics(1, DateTime.Now.AddYears(-1), DateTime.Now);
+                Console.WriteLine(r.Length);
+            }
+        }
     }
 }

@@ -1,0 +1,39 @@
+﻿#region license
+// Copyright (c) 2009 Mauricio Scheffer
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//      http://www.apache.org/licenses/LICENSE-2.0
+//  
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+#endregion
+
+using CookComputing.XmlRpc;
+
+namespace OpenXNet {
+    public class AdvertiserCampaignBannerStats : Stats {
+        [XmlRpcMember("advertiserId")]
+        public int AdvertiserId { get; set; }
+
+        [XmlRpcMember("advertiserName")]
+        public string AdvertiserName { get; set; }
+
+        [XmlRpcMember("campaignId")]
+        public int CampaignId { get; set; }
+
+        [XmlRpcMember("campaignName")]
+        public string CampaignName { get; set; }
+
+        [XmlRpcMember("bannerId")]
+        public int BannerId { get; set; }
+
+        [XmlRpcMember("bannerName")]
+        public string BannerName { get; set; }
+    }
+}
