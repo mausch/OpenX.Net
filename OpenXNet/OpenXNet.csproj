@@ -63,6 +63,7 @@
     <Compile Include="SessionImpl_Manager.cs" />
     <Compile Include="SessionImpl_User.cs" />
     <Compile Include="SessionImpl_Zone.cs" />
+    <Compile Include="Stats.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Zone.cs" />
     <Compile Include="ZoneType.cs" />
