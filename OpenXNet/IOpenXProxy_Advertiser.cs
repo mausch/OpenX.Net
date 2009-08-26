@@ -28,22 +28,22 @@ namespace OpenXNet {
         [XmlRpcMethod("ox.getAdvertiser")]
         Advertiser GetAdvertiser(string sessionId, int advertiserId);
 
-        [XmlRpcMethod("ox.getAdvertiserBannerStatistics")]
+        [XmlRpcMethod("ox.advertiserBannerStatistics")]
         object[] GetAdvertiserBannerStatistics(string sessionId, int advertiserId, DateTime startDate, DateTime endDate);
 
-        [XmlRpcMethod("ox.getAdvertiserCampaignStatistics")]
+        [XmlRpcMethod("ox.advertiserCampaignStatistics")]
         object[] GetAdvertiserCampaignStatistics(string sessionId, int advertiserId, DateTime startDate, DateTime endDate);
 
-        [XmlRpcMethod("ox.getAdvertiserDailyStatistics")]
+        [XmlRpcMethod("ox.advertiserDailyStatistics")]
         object[] GetAdvertiserDailyStatistics(string sessionId, int advertiserId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.getAdvertiserListByAgencyId")]
         Advertiser[] GetAdvertisersByManager(string sessionId, int managerId);
 
-        [XmlRpcMethod("ox.getAdvertiserPublisherStatistics")]
+        [XmlRpcMethod("ox.advertiserPublisherStatistics")]
         object[] GetAdvertiserPublisherStatistics(string sessionId, int advertiserId, DateTime startDate, DateTime endDate);
 
-        [XmlRpcMethod("ox.getAdvertiserZoneStatistics")]
+        [XmlRpcMethod("ox.advertiserZoneStatistics")]
         object[] GetAdvertiserZoneStatistics(string sessionId, int advertiserId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.modifyAdvertiser")]
