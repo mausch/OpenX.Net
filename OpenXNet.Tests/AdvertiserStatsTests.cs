@@ -18,6 +18,7 @@ using System;
 using MbUnit.Framework;
 
 namespace OpenXNet.Tests {
+    [TestFixture]
     public class AdvertiserStatsTests : BaseSessionTests {
         [Test]
         public void AdvertiserDailyStats() {
