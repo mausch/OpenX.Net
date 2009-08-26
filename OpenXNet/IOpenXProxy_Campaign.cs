@@ -41,6 +41,6 @@ namespace OpenXNet {
         Campaign[] GetCampaignsByAdvertiser(string sessionId, int advertiserId);
 
         [XmlRpcMethod("ox.campaignPublisherStatistics")]
-        object[] GetCampaignPublisherStatistics(string sessionId, int campaignId, DateTime startDate, DateTime endDate);
+        PublisherStats[] GetCampaignPublisherStatistics(string sessionId, int campaignId, DateTime startDate, DateTime endDate);
     }
 }

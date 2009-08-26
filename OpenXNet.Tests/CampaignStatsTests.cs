@@ -43,5 +43,13 @@ namespace OpenXNet.Tests {
                 Console.WriteLine(r.Length);
             }
         }
+
+        [Test]
+        public void CampaignPublisherStatistics() {
+            using (var session = NewSession()) {
+                var r = session.GetCampaignPublisherStatistics(1, DateTime.Now.AddYears(-1), DateTime.Now);
+                Console.WriteLine(r.Length);
+            }            
+        }
     }
 }

@@ -47,7 +47,7 @@ namespace OpenXNet {
             return svc.GetCampaignsByAdvertiser(sessionId, advertiserId);
         }
 
-        public object[] GetCampaignPublisherStatistics(int campaignId, DateTime startDate, DateTime endDate) {
+        public PublisherStats[] GetCampaignPublisherStatistics(int campaignId, DateTime startDate, DateTime endDate) {
             return svc.GetCampaignPublisherStatistics(sessionId, campaignId, startDate, endDate);
         }
     }
