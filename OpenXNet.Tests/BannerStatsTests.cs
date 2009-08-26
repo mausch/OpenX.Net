@@ -49,5 +49,21 @@ namespace OpenXNet.Tests {
                 }
             }
         }
+
+        [Test]
+        public void BannerZoneStatistics() {
+            using (var session = NewSession()) {
+                var r = session.GetBannerZoneStatistics(1, DateTime.Now.AddYears(-1), DateTime.Now);
+                Console.WriteLine("got {0} stats", r.Length);
+                foreach (var stat in r) {
+                    Console.WriteLine("Publisher {0}: {1}", stat.PublisherId, stat.PublisherName);
+                    Console.WriteLine("Zone {0}: {1}", stat.ZoneId, stat.ZoneName);
+                    Console.WriteLine("Impressions: {0}", stat.Impressions);
+                    Console.WriteLine("Clicks: {0}", stat.Clicks);
+                    Console.WriteLine("Requests: {0}", stat.Requests);
+                    Console.WriteLine("Revenue: {0}", ((decimal)stat.Revenue).ToString("C"));
+                }
+            }            
+        }
     }
 }

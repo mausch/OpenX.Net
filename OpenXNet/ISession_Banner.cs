@@ -25,7 +25,7 @@ namespace OpenXNet {
         Banner[] GetBannersByCampaign(int campaignId);
         DailyStats[] GetBannerDailyStatistics(int bannerId, DateTime startDate, DateTime endDate);
         PublisherStats[] GetBannerPublisherStatistics(int bannerId, DateTime startDate, DateTime endDate);
-        object[] GetBannerZoneStatistics(int bannerId, DateTime startDate, DateTime endDate);
+        PublisherZoneStats[] GetBannerZoneStatistics(int bannerId, DateTime startDate, DateTime endDate);
 
         /// <summary>
         /// Gets banner targeting information.

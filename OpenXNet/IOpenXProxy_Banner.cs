@@ -41,7 +41,7 @@ namespace OpenXNet {
         PublisherStats[] GetBannerPublisherStatistics(string sessionId, int bannerId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.bannerZoneStatistics")]
-        object[] GetBannerZoneStatistics(string sessionId, int bannerId, DateTime startDate, DateTime endDate);
+        PublisherZoneStats[] GetBannerZoneStatistics(string sessionId, int bannerId, DateTime startDate, DateTime endDate);
 
         /// <summary>
         /// Gets banner targeting information.

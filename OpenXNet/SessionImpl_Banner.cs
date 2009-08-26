@@ -47,7 +47,7 @@ namespace OpenXNet {
             return svc.GetBannerPublisherStatistics(sessionId, bannerId, startDate, endDate);
         }
 
-        public object[] GetBannerZoneStatistics(int bannerId, DateTime startDate, DateTime endDate) {
+        public PublisherZoneStats[] GetBannerZoneStatistics(int bannerId, DateTime startDate, DateTime endDate) {
             return svc.GetBannerZoneStatistics(sessionId, bannerId, startDate, endDate);
         }
 
