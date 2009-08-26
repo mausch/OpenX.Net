@@ -59,6 +59,7 @@
     <Compile Include="Manager.cs" />
     <Compile Include="IOpenXProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublisherStats.cs" />
     <Compile Include="SessionImpl.cs" />
     <Compile Include="SessionImpl_Advertiser.cs" />
     <Compile Include="SessionImpl_Banner.cs" />

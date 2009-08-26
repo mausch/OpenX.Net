@@ -32,7 +32,7 @@ namespace OpenXNet {
 
         Advertiser[] GetAdvertisersByManager(int managerId);
 
-        object[] GetAdvertiserPublisherStatistics(int advertiserId, DateTime startDate, DateTime endDate);
+        PublisherStats[] GetAdvertiserPublisherStatistics(int advertiserId, DateTime startDate, DateTime endDate);
 
         object[] GetAdvertiserZoneStatistics(int advertiserId, DateTime startDate, DateTime endDate);
 
