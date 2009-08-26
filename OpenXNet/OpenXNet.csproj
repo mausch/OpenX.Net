@@ -42,6 +42,7 @@
     <Compile Include="BannerTargeting.cs" />
     <Compile Include="Campaign.cs" />
     <Compile Include="CampaignBannerStats.cs" />
+    <Compile Include="CampaignStats.cs" />
     <Compile Include="DailyStats.cs" />
     <Compile Include="IOpenXProxy_Advertiser.cs" />
     <Compile Include="IOpenXProxy_Banner.cs" />

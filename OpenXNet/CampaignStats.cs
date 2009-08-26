@@ -17,11 +17,11 @@
 using CookComputing.XmlRpc;
 
 namespace OpenXNet {
-    public class CampaignBannerStats : CampaignStats {
-        [XmlRpcMember("bannerId")]
-        public int BannerId { get; set; }
+    public class CampaignStats : Stats {
+        [XmlRpcMember("campaignId")]
+        public int CampaignId { get; set; }
 
-        [XmlRpcMember("bannerName")]
-        public string BannerName { get; set; }
+        [XmlRpcMember("campaignName")]
+        public string CampaignName { get; set; }
     }
 }
