@@ -50,6 +50,6 @@ namespace OpenXNet {
         PublisherStats[] GetManagerPublisherStatistics(string sessionId, int managerId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.agencyZoneStatistics")]
-        object[] GetManagerZoneStatistics(string sessionId, int managerId, DateTime startDate, DateTime endDate);
+        PublisherZoneStats[] GetManagerZoneStatistics(string sessionId, int managerId, DateTime startDate, DateTime endDate);
     }
 }

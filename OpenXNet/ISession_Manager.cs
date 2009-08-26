@@ -38,6 +38,6 @@ namespace OpenXNet {
 
         PublisherStats[] GetManagerPublisherStatistics(int managerId, DateTime startDate, DateTime endDate);
 
-        object[] GetManagerZoneStatistics(int managerId, DateTime startDate, DateTime endDate);
+        PublisherZoneStats[] GetManagerZoneStatistics(int managerId, DateTime startDate, DateTime endDate);
     }
 }
