@@ -47,7 +47,7 @@ namespace OpenXNet {
             return svc.GetManagerCampaignStatistics(sessionId, managerId, startDate, endDate);
         }
 
-        public object[] GetManagerDailyStatistics(int managerId, DateTime startDate, DateTime endDate) {
+        public DailyStats[] GetManagerDailyStatistics(int managerId, DateTime startDate, DateTime endDate) {
             return svc.GetManagerDailyStatistics(sessionId, managerId, startDate, endDate);
         }
 
