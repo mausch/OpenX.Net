@@ -35,5 +35,13 @@ namespace OpenXNet.Tests {
                 }
             }
         }
+
+        [Test]
+        public void CampaignDailyStatistics() {
+            using (var session = NewSession()) {
+                var r = session.GetCampaignDailyStatistics(1, DateTime.Now.AddYears(-1), DateTime.Now);
+                Console.WriteLine(r.Length);
+            }
+        }
     }
 }

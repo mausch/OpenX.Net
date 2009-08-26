@@ -39,7 +39,7 @@ namespace OpenXNet {
             return svc.GetCampaignBannerStatistics(sessionId, campaignId, startDate, endDate);
         }
 
-        public object[] GetCampaignDailyStatistics(int campaignId, DateTime startDate, DateTime endDate) {
+        public DailyStats[] GetCampaignDailyStatistics(int campaignId, DateTime startDate, DateTime endDate) {
             return svc.GetCampaignDailyStatistics(sessionId, campaignId, startDate, endDate);
         }
 

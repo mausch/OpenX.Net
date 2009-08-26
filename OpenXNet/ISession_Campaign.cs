@@ -28,7 +28,7 @@ namespace OpenXNet {
 
         CampaignBannerStats[] GetCampaignBannerStatistics(int campaignId, DateTime startDate, DateTime endDate);
 
-        object[] GetCampaignDailyStatistics(int campaignId, DateTime startDate, DateTime endDate);
+        DailyStats[] GetCampaignDailyStatistics(int campaignId, DateTime startDate, DateTime endDate);
 
         Campaign[] GetCampaignsByAdvertiser(int advertiserId);
 
