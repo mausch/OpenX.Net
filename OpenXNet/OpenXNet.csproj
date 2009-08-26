@@ -37,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Advertiser.cs" />
+    <Compile Include="AdvertiserStats.cs" />
     <Compile Include="Banner.cs" />
     <Compile Include="BannerImage.cs" />
     <Compile Include="BannerTargeting.cs" />

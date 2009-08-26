@@ -53,6 +53,7 @@
     <Compile Include="BaseSessionTests.cs" />
     <Compile Include="CampaignStatsTests.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="ManagerStatsTests.cs" />
     <Compile Include="OpenXServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SessionTests.cs" />

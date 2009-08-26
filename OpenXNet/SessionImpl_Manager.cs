@@ -35,7 +35,7 @@ namespace OpenXNet {
             svc.ModifyManager(sessionId, manager);
         }
 
-        public object[] GetManagerAdvertiserStatistics(int managerId, DateTime startDate, DateTime endDate) {
+        public AdvertiserStats[] GetManagerAdvertiserStatistics(int managerId, DateTime startDate, DateTime endDate) {
             return svc.GetManagerAdvertiserStatistics(sessionId, managerId, startDate, endDate);
         }
 

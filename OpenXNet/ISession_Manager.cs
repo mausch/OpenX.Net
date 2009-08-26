@@ -26,7 +26,7 @@ namespace OpenXNet {
 
         void ModifyManager(Manager manager);
 
-        object[] GetManagerAdvertiserStatistics(int managerId, DateTime startDate, DateTime endDate);
+        AdvertiserStats[] GetManagerAdvertiserStatistics(int managerId, DateTime startDate, DateTime endDate);
 
         object[] GetManagerBannerStatistics(int managerId, DateTime startDate, DateTime endDate);
 
