@@ -15,14 +15,12 @@
 #endregion
 
 using System;
-using System.IO;
 using System.Linq;
-using CookComputing.XmlRpc;
 using MbUnit.Framework;
 
 namespace OpenXNet.Tests {
     [TestFixture]
-    public class SessionTests {
+    public class SessionTests: BaseSessionTests {
         [Test]
         public void AddAdvertiser() {
             using (var session = NewSession()) {
@@ -55,104 +53,6 @@ namespace OpenXNet.Tests {
                     CampaignName = "campaign-" + Guid.NewGuid(),
                 });
             }
-        }
-
-        [Test]
-        public void AdvertiserDailyStats() {
-            using (var session = NewSession()) {
-                var r = session.GetAdvertiserDailyStatistics(1, DateTime.Now.AddYears(-1), DateTime.Now);
-                Console.WriteLine("got {0} stats", r.Length);
-                foreach (var stat in r) {
-                    Console.WriteLine("Stats for day {0}:", stat.Day.ToShortDateString());
-                    Console.WriteLine("Impressions: {0}", stat.Impressions);
-                    Console.WriteLine("Clicks: {0}", stat.Impressions);
-                    Console.WriteLine("Requests: {0}", stat.Requests);
-                    Console.WriteLine("Revenue: {0}", ((decimal)stat.Revenue).ToString("C"));
-                }
-            }
-        }
-
-        [Test]
-        public void AdvertiserBannerStatistics() {
-            using (var session = NewSession()) {
-                var r = session.GetAdvertiserBannerStatistics(1, DateTime.Now.AddYears(-1), DateTime.Now);
-                Console.WriteLine("got {0} stats", r.Length);
-                foreach (var stat in r) {
-                    Console.WriteLine("Campaign {0}: {1}", stat.CampaignId, stat.CampaignName);
-                    Console.WriteLine("Banner {0}: {1}", stat.BannerId, stat.BannerName);
-                    Console.WriteLine("Impressions: {0}", stat.Impressions);
-                    Console.WriteLine("Clicks: {0}", stat.Impressions);
-                    Console.WriteLine("Requests: {0}", stat.Requests);
-                    Console.WriteLine("Revenue: {0}", ((decimal)stat.Revenue).ToString("C"));
-                }
-            }
-        }
-
-        [Test]
-        public void AdvertiserCampaignStatistics() {
-            using (var session = NewSession()) {
-                var r = session.GetAdvertiserCampaignStatistics(1, DateTime.Now.AddYears(-1), DateTime.Now);
-                Console.WriteLine("got {0} stats", r.Length);
-                foreach (var stat in r) {
-                    Console.WriteLine("Campaign {0}: {1}", stat.CampaignId, stat.CampaignName);
-                    Console.WriteLine("Impressions: {0}", stat.Impressions);
-                    Console.WriteLine("Clicks: {0}", stat.Impressions);
-                    Console.WriteLine("Requests: {0}", stat.Requests);
-                    Console.WriteLine("Revenue: {0}", ((decimal)stat.Revenue).ToString("C"));
-                }
-            }            
-        }
-
-        [Test]
-        public void AdvertiserPublisherStatistics() {
-            using (var session = NewSession()) {
-                var r = session.GetAdvertiserPublisherStatistics(1, DateTime.Now.AddYears(-1), DateTime.Now);
-                Console.WriteLine("got {0} stats", r.Length);
-                foreach (var stat in r) {
-                    Console.WriteLine("Publisher {0}: {1}", stat.PublisherId, stat.PublisherName);
-                    Console.WriteLine("Impressions: {0}", stat.Impressions);
-                    Console.WriteLine("Clicks: {0}", stat.Impressions);
-                    Console.WriteLine("Requests: {0}", stat.Requests);
-                    Console.WriteLine("Revenue: {0}", ((decimal)stat.Revenue).ToString("C"));
-                }
-            }
-        }
-
-        [Test]
-        public void AdvertiserZoneStatistics() {
-            using (var session = NewSession()) {
-                var r = session.GetAdvertiserZoneStatistics(1, DateTime.Now.AddYears(-1), DateTime.Now);
-                Console.WriteLine("got {0} stats", r.Length);
-                foreach (var stat in r) {
-                    Console.WriteLine("Publisher {0}: {1}", stat.PublisherId, stat.PublisherName);
-                    Console.WriteLine("Zone {0}: {1}", stat.ZoneId, stat.ZoneName);
-                    Console.WriteLine("Impressions: {0}", stat.Impressions);
-                    Console.WriteLine("Clicks: {0}", stat.Impressions);
-                    Console.WriteLine("Requests: {0}", stat.Requests);
-                    Console.WriteLine("Revenue: {0}", ((decimal)stat.Revenue).ToString("C"));
-                }
-            }
-        }
-
-        private SessionImpl NewSession() {
-            var proxy = XmlRpcProxyGen.Create<IOpenXProxy>();
-            proxy.Url = Config.Url;
-            proxy.ResponseEvent += proxy_ResponseEvent;
-            proxy.RequestEvent += proxy_RequestEvent;
-            return new SessionImpl(proxy, Config.Username, Config.Password);
-        }
-
-        private void PrintStream(Stream s) {
-            using (var sw = new StreamReader(s))
-                Console.WriteLine(sw.ReadToEnd());
-        }
-
-        private void proxy_RequestEvent(object sender, XmlRpcRequestEventArgs args) {
-            PrintStream(args.RequestStream);
-        }
-
-        private void proxy_ResponseEvent(object sender, XmlRpcResponseEventArgs args) {
-            PrintStream(args.ResponseStream);
         }
     }
 }
