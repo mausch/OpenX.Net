@@ -30,7 +30,7 @@ namespace OpenXNet {
 
         object[] GenerateTags(int zoneId, int codeType, object[] param);
 
-        object[] GetZoneAdvertiserStatistics(int zoneId, DateTime startDate, DateTime endDate);
+        AdvertiserStats[] GetZoneAdvertiserStatistics(int zoneId, DateTime startDate, DateTime endDate);
 
         object[] GetZoneBannerStatistics(int zoneId, DateTime startDate, DateTime endDate);
 

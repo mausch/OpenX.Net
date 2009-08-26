@@ -43,7 +43,7 @@ namespace OpenXNet {
             return svc.GenerateTags(sessionId, zoneId, codeType, param);
         }
 
-        public object[] GetZoneAdvertiserStatistics(int zoneId, DateTime startDate, DateTime endDate) {
+        public AdvertiserStats[] GetZoneAdvertiserStatistics(int zoneId, DateTime startDate, DateTime endDate) {
             return svc.GetZoneAdvertiserStatistics(sessionId, zoneId, startDate, endDate);
         }
 

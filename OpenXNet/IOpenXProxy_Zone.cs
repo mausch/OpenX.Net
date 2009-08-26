@@ -38,7 +38,7 @@ namespace OpenXNet {
         object[] GenerateTags(string sessionId, int zoneId, int codeType, object[] param);
 
         [XmlRpcMethod("ox.zoneAdvertiserStatistics")]
-        object[] GetZoneAdvertiserStatistics(string sessionId, int zoneId, DateTime startDate, DateTime endDate);
+        AdvertiserStats[] GetZoneAdvertiserStatistics(string sessionId, int zoneId, DateTime startDate, DateTime endDate);
 
         [XmlRpcMethod("ox.zoneBannerStatistics")]
         object[] GetZoneBannerStatistics(string sessionId, int zoneId, DateTime startDate, DateTime endDate);
