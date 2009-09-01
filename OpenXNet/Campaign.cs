@@ -59,17 +59,24 @@ namespace OpenXNet {
         [XmlRpcMember("impressions")]
         public int Impressions { get; set; }
 
+        /// <summary>
+        /// Priority level for the campaign
+        /// </summary>
         [XmlRpcMember("priority")]
         public int Priority { get; set; }
 
         [XmlRpcMember("revenue")]
         public double Revenue { get; set; }
 
+        /// <summary>
+        /// Revenue type (CPM, CPA, etc)
+        /// </summary>
         [XmlRpcMember("revenueType")]
         public int RevenueType { get; set; }
 
         /// <summary>
         /// Frequency capping: total views per period
+        /// (defined in seconds by "block").
         /// </summary>
         [XmlRpcMember("sessionCapping")]
         public int SessionCapping { get; set; }
@@ -86,6 +93,9 @@ namespace OpenXNet {
         [XmlRpcMember("targetImpressions")]
         public int TargetImpressions { get; set; }
 
+        /// <summary>
+        /// Priority weight of this campaign
+        /// </summary>
         [XmlRpcMember("weight")]
         public int Weight { get; set; }
 
