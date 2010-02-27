@@ -57,6 +57,7 @@
     <Compile Include="OpenXServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SessionTests.cs" />
+    <Compile Include="UserTests.cs" />
     <Compile Include="ZoneStatsTests.cs" />
     <Compile Include="ZoneTests.cs" />
   </ItemGroup>

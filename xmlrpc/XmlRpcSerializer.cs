@@ -1456,6 +1456,14 @@ namespace CookComputing.XmlRpc
         && ValueType != typeof(System.Int32)
         && ValueType != typeof(int?))
       {
+          if (ValueType == typeof(Boolean))
+          {
+              int pIntValue = int.Parse(node.InnerText);
+              if (pIntValue == 0 || pIntValue == 1)
+              {
+                  return ParseBoolean(node, typeof(Boolean), parseStack, mappingAction);
+              }
+          }
         throw new XmlRpcTypeMismatchException(parseStack.ParseType +
           " contains int value where "
           + XmlRpcServiceInfo.GetXmlRpcTypeString(ValueType)
