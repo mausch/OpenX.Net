@@ -83,6 +83,12 @@ namespace OpenXNet {
         public string AdServer { get; set; }
 
         /// <summary>
+        /// Provides the alt value for SQL/Web/External banners.
+        /// </summary>
+        [XmlRpcMember("alt")]
+        public string Alt { get; set; }
+
+        /// <summary>
         /// This field provides the URL for the image file for an external banner.
         /// </summary>
         [XmlRpcMember("imageURL")]
