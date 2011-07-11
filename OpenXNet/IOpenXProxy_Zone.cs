@@ -34,7 +34,7 @@ namespace OpenXNet {
         [XmlRpcMethod("ox.getZoneListByPublisherId")]
         Zone[] GetZonesByPublisher(string sessionId, int publisherId);
 
-        [XmlRpcMethod("ox.generateTags")]
+        [XmlRpcMethod("ox.generateTags")]        
         object[] GenerateTags(string sessionId, int zoneId, int codeType, object[] param);
 
         [XmlRpcMethod("ox.zoneAdvertiserStatistics")]
