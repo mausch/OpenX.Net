@@ -15,9 +15,11 @@
 #endregion
 
 using System;
+using System.Linq;
 using System.IO;
 using CookComputing.XmlRpc;
 using MbUnit.Framework;
+using System.Reflection;
 
 namespace OpenXNet.Tests {
     [TestFixture]
@@ -116,6 +118,35 @@ namespace OpenXNet.Tests {
             var svc = GetSvc();
             foreach (var m in svc.SystemListMethods())
                 Console.WriteLine(m);
+        }
+
+        private XmlRpcMethodAttribute[] GetXmlRpcAttributes(MethodInfo m) {
+            return m.GetCustomAttributes(typeof(XmlRpcMethodAttribute), true)
+                .Cast<XmlRpcMethodAttribute>()
+                .ToArray();
+        }
+
+        [Test]
+        public void MethodsAreCorrectlyMapped() {
+            var svc = GetSvc();
+            var methods = svc.SystemListMethods();
+            var xmlRpcMethods = typeof(IOpenXProxy).GetMethods()
+                .Where(m => GetXmlRpcAttributes(m).Length > 0)
+                .Select(m => new { m.Name, GetXmlRpcAttributes(m)[0].Method });
+            var invalidMethods = xmlRpcMethods
+                .Where(m => !methods.Contains(m.Method))
+                .ToList();
+            var unmappedMethods = methods
+                .Where(m => !xmlRpcMethods.Select(x => x.Method).Contains(m))
+                .ToList();
+            foreach (var x in unmappedMethods) {
+                Console.WriteLine("Unmapped method '{0}'", x);
+            }
+            foreach (var x in invalidMethods) {
+                Console.WriteLine("Invalid method '{0}' in '{1}'", x.Method, x.Name);
+            }
+            if (invalidMethods.Count > 0)
+                Assert.Fail("There are invalid methods");
         }
 
         public void WithSession(Action<string, IOpenXProxy> a) {
