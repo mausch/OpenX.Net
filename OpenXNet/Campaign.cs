@@ -70,6 +70,7 @@ namespace OpenXNet {
 
         /// <summary>
         /// Revenue type (CPM, CPA, etc)
+        /// <see cref="RevenueType"/>
         /// </summary>
         [XmlRpcMember("revenueType")]
         public int RevenueType { get; set; }

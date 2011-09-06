@@ -90,6 +90,7 @@
     <Compile Include="Publisher.cs" />
     <Compile Include="PublisherStats.cs" />
     <Compile Include="PublisherZoneStats.cs" />
+    <Compile Include="RevenueType.cs" />
     <Compile Include="SessionImpl.cs" />
     <Compile Include="SessionImpl_Advertiser.cs" />
     <Compile Include="SessionImpl_Banner.cs" />

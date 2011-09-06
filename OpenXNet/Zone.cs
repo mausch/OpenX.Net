@@ -46,6 +46,9 @@ namespace OpenXNet {
         [XmlRpcMember("comments")]
         public string Comments { get; set; }
 
+        /// <summary>
+        /// <see cref="ZoneType"/>
+        /// </summary>
         [XmlRpcMember("type")]
         public int Type { get; set; }
     }
