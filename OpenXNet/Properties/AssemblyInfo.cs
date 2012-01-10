@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("OpenXNet")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("LT")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("OpenXNet")]
 [assembly: AssemblyCopyright("Copyright © Mauricio Scheffer 2009-2011")]
 [assembly: AssemblyTrademark("")]
