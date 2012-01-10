@@ -15,7 +15,7 @@
 #endregion
 
 using System;
-using System.Net.Sockets;
+using System.Net;
 using CookComputing.XmlRpc;
 
 namespace OpenXNet {
@@ -37,7 +37,7 @@ namespace OpenXNet {
             try {
                 sessionId = svc.Logon(username, password);
                 ownsSession = true;
-            } catch (SocketException e) {
+            } catch (WebException e) {
                 throw new Exception(string.Format("Unable to connect to OpenX server at {0}", url), e);
             }
         }
@@ -47,7 +47,7 @@ namespace OpenXNet {
             try {
                 sessionId = svc.Logon(username, password);
                 ownsSession = true;
-            } catch (SocketException e) {
+            } catch (WebException e) {
                 throw new Exception("Unable to connect to OpenX server", e);
             }
         }
